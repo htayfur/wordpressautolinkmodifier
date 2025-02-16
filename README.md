@@ -11,7 +11,21 @@ A WordPress plugin that adds custom 'rel' attributes and 'target="_blank"' to ex
    - ✅ Automatically exclude internal links
    - ✅ Exclude official institution websites
 
-2. REL Attributes Management:
+2. Security Features:
+   - ✅ Nonce verification for forms
+   - ✅ Input sanitization
+   - ✅ XSS protection
+   - ✅ Secure domain validation
+   - ✅ Error logging and monitoring
+
+3. Performance Features:
+   - ✅ Content caching system
+   - ✅ Optimized DOM processing
+   - ✅ Smart cache invalidation
+   - ✅ Error recovery mechanisms
+   - ✅ Skip unnecessary processing
+
+4. REL Attributes Management:
    - ✅ Easy management from WordPress admin panel
    - ✅ Customizable REL attributes:
      - `noopener` - Prevents the new page from accessing window.opener
@@ -20,60 +34,49 @@ A WordPress plugin that adds custom 'rel' attributes and 'target="_blank"' to ex
      - `sponsored` - Marks links as paid/sponsored content
      - `ugc` - Marks links as user-generated content
 
-3. Custom Domain Management:
-   - ✅ Add custom domain list
-   - ✅ Automatic domain format validation
-   - ✅ One domain per line input
-   - ✅ Easy domain management
+5. Domain Management:
+   - ✅ Custom domain list with validation
+   - ✅ Official institution domains:
+     - Global government domains (.gov, .gov.uk, .gov.au)
+     - Global education domains (.edu, .ac.uk, .edu.au)
+     - Military domains (.mil)
+     - Country specific domains (gov.tr, edu.tr, gov.de, edu.fr)
 
-4. Official Domain Control:
-   - ✅ Global government domains (.gov, .gov.uk, .gov.au)
-   - ✅ Global education domains (.edu, .ac.uk, .edu.au)
-   - ✅ Military domains (.mil)
-   - ✅ Country specific domains (gov.tr, edu.tr, gov.de, edu.fr)
-
-5. Performance Improvements:
-   - ✅ DOM processing optimization
-   - ✅ Error catching and logging
-   - ✅ Skip unnecessary processing
-   - ✅ Minified CSS/JS
-
-6. Advanced Settings:
-   - ✅ Modern and user-friendly interface
+6. Admin Interface:
+   - ✅ Modern and user-friendly design
    - ✅ Real-time domain validation
    - ✅ Visual feedback
    - ✅ Helpful descriptions
+   - ✅ Error reporting
 
 7. Multi-language Support:
-   - ✅ Turkish language files
-   - ✅ Feature description translations
-   - ✅ Admin panel translations
+   - ✅ English interface
+   - ✅ Turkish translations
+   - ✅ Translatable strings
 
 ## 📋 Planned Features
 
-1. Security Improvements:
-   - [ ] XSS protection for custom domains
-   - [ ] Nonce verification in forms
-   - [ ] Enhanced input sanitization
+1. Additional Security:
+   - [ ] Role-based permissions
+   - [ ] API authentication
+   - [ ] Activity logging
 
-2. Performance Optimizations:
-   - [ ] Link processing cache system
-   - [ ] Lazy loading for admin interface
-   - [ ] Background processing for large content
+2. Enhanced Performance:
+   - [ ] Batch processing
+   - [ ] Background processing
+   - [ ] Network optimization
 
-3. Additional Features:
+3. New Features:
    - [ ] Custom shortcode support
-   - [ ] Page builder compatibility (Elementor, WPBakery)
-   - [ ] Link statistics and analytics
-   - [ ] Bulk domain management
-   - [ ] Import/Export settings
-   - [ ] Domain wildcards support
+   - [ ] Page builder integrations
+   - [ ] Link analytics
+   - [ ] Bulk operations
 
-4. Developer Features:
-   - [ ] Action/Filter hooks documentation
-   - [ ] Custom domain validator support
+4. Developer Tools:
+   - [ ] API documentation
+   - [ ] Hook documentation
    - [ ] Unit tests
-   - [ ] Developer documentation
+   - [ ] E2E tests
 
 ## Requirements
 
@@ -96,15 +99,22 @@ A WordPress plugin that adds custom 'rel' attributes and 'target="_blank"' to ex
 4. Save changes
 5. The plugin will automatically process links in your content
 
-## Known Issues
+## Best Practices
 
-1. DOM Processing:
-   - Some special characters might need additional encoding
-   - Nested content might require special handling
+1. Security:
+   - Regularly update the plugin
+   - Review excluded domains
+   - Monitor error logs
 
 2. Performance:
-   - Large content might need optimization
-   - Multiple widget processing could be improved
+   - Clear cache after major changes
+   - Use domain wildcards for better performance
+   - Monitor server resources
+
+3. Content:
+   - Review modified links periodically
+   - Test external links
+   - Update domain exclusions as needed
 
 ## License
 
@@ -117,9 +127,15 @@ GPL v2 or later
 ## Version History
 
 ### 1.1.1
-- Converted documentation to English
-- Improved documentation structure
-- Updated version information
+- Added comprehensive security features
+  - Nonce verification
+  - Input sanitization
+  - Error handling
+- Implemented performance optimizations
+  - Content caching
+  - DOM processing improvements
+  - Smart cache invalidation
+- Updated documentation and translations
 
 ### 1.1.0 
 - Added widget content support
@@ -131,7 +147,7 @@ GPL v2 or later
 
 ### 1.0.0 
 - Initial release
-- External link processing in WordPress posts and pages
+- External link processing
 - Customizable REL attributes
-- Global and local official domain support
+- Official domain support
 - Turkish language support

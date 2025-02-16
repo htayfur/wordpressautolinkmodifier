@@ -4,19 +4,37 @@
 
 ### Security Improvements
 - Added nonce verification for forms
+  - Settings form protection
+  - AJAX request validation
 - Enhanced input sanitization
+  - Domain input validation
+  - REL attribute sanitization
 - Improved error handling and logging
+  - Detailed error messages
+  - WordPress debug integration
+  - Custom error handlers
 
 ### Performance Optimizations
 - Added caching system for processed content
-- Cache clearing on content updates
+  - Content-based cache keys
+  - Automatic cache invalidation
+  - Smart cache expiration
 - Optimized DOM processing
-- Added error recovery mechanisms
+  - Reduced memory usage
+  - Faster link processing
+  - Better UTF-8 handling
+- Error recovery mechanisms
+  - Graceful fallback options
+  - Self-healing processes
+  - Clean error reporting
 
-### Other Changes
-- Converted documentation to English
-- Improved documentation structure
-- Updated version information
+### Documentation
+- Converted all documentation to English
+- Added security best practices
+- Added performance guidelines
+- Updated installation instructions
+- Enhanced code comments
+- Improved inline documentation
 
 ## [1.1.0] - 2024-02-16
 
@@ -24,6 +42,7 @@
 - Widget and block content support
   - Link processing in widget text
   - Link processing in Gutenberg block content
+  - Dynamic widget updates
 - Custom domain list management
   - Add/remove domains from admin panel
   - Automatic domain format validation
@@ -41,14 +60,17 @@
 - Added error handling system
   - Detailed error logs
   - WordPress debug mode integration
+  - Error recovery
 - Updated language files
   - Added new strings
   - Updated Turkish translations
+  - Improved string contexts
 
 ### Changes
 - Renewed admin panel interface
 - Updated REL attribute descriptions
 - Optimized settings page layout
+- Enhanced user experience
 
 ## [1.0.0] - 2024-02-16
 
@@ -67,3 +89,9 @@
   - Country specific domains
 - WordPress admin panel integration
 - Turkish language support
+
+### Core Features
+- Automatic link detection
+- Target attribute addition
+- Domain exclusion system
+- Settings management
