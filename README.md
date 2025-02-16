@@ -4,45 +4,50 @@ WordPress yazı ve sayfa içeriklerindeki dış bağlantılara özel `rel` ve `t
 
 ## ✅ Tamamlanan Özellikler
 
-1. Temel Özellikler:
+1. Bağlantı İşleme:
    - ✅ WordPress yazı ve sayfa içeriklerini kontrol etme
-   - ✅ Dış bağlantıları tespit etme
-   - ✅ target="_blank" ekleme
-   - ✅ İç bağlantıları hariç tutma
+   - ✅ Widget ve blok içeriklerini kontrol etme
+   - ✅ Dış bağlantılara target="_blank" ekleme
+   - ✅ İç bağlantıları otomatik hariç tutma
    - ✅ Resmi kurumları hariç tutma
 
 2. REL Özellikleri Yönetimi:
-   - ✅ WordPress admin panelinden yönetim
-   - ✅ Özelleştirilebilir rel özellikleri:
-     - ✅ noopener
-     - ✅ noreferrer
-     - ✅ nofollow
-     - ✅ sponsored
-     - ✅ ugc
+   - ✅ WordPress admin panelinden kolay yönetim
+   - ✅ Özelleştirilebilir REL özellikleri:
+     - `noopener` - Yeni sayfanın window.opener'a erişimini engeller
+     - `noreferrer` - Referans bilgisinin iletilmesini engeller
+     - `nofollow` - Arama motorlarına bağlantıyı takip etmemesini söyler
+     - `sponsored` - Sponsorlu/reklamlı içerik bağlantılarını işaretler
+     - `ugc` - Kullanıcı tarafından oluşturulan içerik bağlantılarını işaretler
 
-3. Resmi Domain Kontrolü:
+3. Özel Domain Yönetimi:
+   - ✅ Özel domain listesi ekleme
+   - ✅ Domain formatı otomatik kontrolü
+   - ✅ Her satıra bir domain girişi
+   - ✅ Kolay domain yönetimi
+
+4. Resmi Domain Kontrolü:
    - ✅ Global devlet domainleri (.gov, .gov.uk, .gov.au)
    - ✅ Global eğitim domainleri (.edu, .ac.uk, .edu.au)
    - ✅ Askeri domainler (.mil)
    - ✅ Ülke spesifik domainler (gov.tr, edu.tr, gov.de, edu.fr)
 
-4. Çoklu Dil Desteği:
+5. Performans İyileştirmeleri:
+   - ✅ DOM işleme optimizasyonu
+   - ✅ Hata yakalama ve loglama
+   - ✅ Gereksiz işlemleri atlama
+   - ✅ Minify edilmiş CSS/JS
+
+6. Gelişmiş Ayarlar:
+   - ✅ Modern ve kullanıcı dostu arayüz
+   - ✅ Gerçek zamanlı domain validasyonu
+   - ✅ Görsel geri bildirimler
+   - ✅ Yardımcı açıklamalar
+
+7. Çoklu Dil Desteği:
    - ✅ Türkçe dil dosyaları
    - ✅ Özellik açıklamaları çevirileri
    - ✅ Admin panel çevirileri
-
-## 📋 Yapılması Planlananlar
-
-1. İyileştirmeler:
-   - [ ] Performans optimizasyonları
-   - [ ] Hata yakalama geliştirmeleri
-   - [ ] Domain listesi genişletme
-
-2. Yeni Özellikler:
-   - [ ] Özel domain listesi ekleme imkanı
-   - [ ] Özel rel özelliği tanımlama
-   - [ ] Gelişmiş ayar sayfası
-   - [ ] Widget içerik desteği
 
 ## Gereksinimler
 
@@ -55,13 +60,15 @@ WordPress yazı ve sayfa içeriklerindeki dış bağlantılara özel `rel` ve `t
 2. WordPress admin paneli > Eklentiler > Yeni Ekle
 3. "Eklenti Yükle" butonuna tıklayın ve zip dosyasını seçin
 4. "Şimdi Yükle" ve ardından "Etkinleştir"
-5. Ayarlar > Dış Bağlantılar menüsünden REL özelliklerini yapılandırın
+5. Ayarlar > Dış Bağlantılar menüsünden yapılandırın
 
 ## Kullanım
 
-1. Ayarlar > Dış Bağlantılar menüsünden REL özelliklerini seçin
-2. Değişiklikleri kaydedin
-3. Eklenti otomatik olarak yazı ve sayfalardaki dış bağlantıları işleyecektir
+1. Ayarlar > Dış Bağlantılar menüsüne gidin
+2. REL özelliklerini seçin
+3. İsteğe bağlı olarak özel domain listesi ekleyin
+4. Değişiklikleri kaydedin
+5. Eklenti otomatik olarak içeriklerdeki bağlantıları düzenleyecektir
 
 ## Lisans
 
@@ -79,3 +86,11 @@ GPL v2 veya üzeri
 - Özelleştirilebilir REL özellikleri
 - Global ve yerel resmi domain desteği
 - Türkçe dil desteği
+
+### 1.1.0
+- Widget içerik desteği eklendi
+- Özel domain listesi özelliği eklendi
+- Gelişmiş ayar sayfası eklendi
+- Admin panel CSS/JS eklendi
+- Performans iyileştirmeleri yapıldı
+- Hata yakalama geliştirildi
