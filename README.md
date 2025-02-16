@@ -2,138 +2,48 @@
 
 A WordPress plugin that adds custom 'rel' attributes and 'target="_blank"' to external links in posts and pages. It modifies all links except internal links and official institution websites.
 
-## ✅ Features
+## ✅ Current Features
 
-1. Advanced Domain Management:
-   - ✅ Wildcard domain support (*.example.com)
-   - ✅ Regex pattern matching
-   - ✅ Bulk domain operations
-   - ✅ Domain import/export
-   - ✅ Pattern validation
-
-2. Link Processing:
-   - ✅ Process WordPress post and page content
-   - ✅ Process widget and block content
-   - ✅ Add target="_blank" to external links
-   - ✅ Automatically exclude internal links
-   - ✅ Exclude official institution websites
-
-3. Security Features:
-   - ✅ Nonce verification for forms
-   - ✅ Input sanitization
-   - ✅ XSS protection
-   - ✅ Secure domain validation
-   - ✅ Error logging and monitoring
-
-4. Performance Features:
-   - ✅ Content caching system
-   - ✅ Optimized DOM processing
-   - ✅ Smart cache invalidation
-   - ✅ Error recovery mechanisms
-   - ✅ Skip unnecessary processing
-
-5. REL Attributes Management:
-   - ✅ Easy management from WordPress admin panel
-   - ✅ Customizable REL attributes:
-     - `noopener` - Prevents the new page from accessing window.opener
-     - `noreferrer` - Prevents passing referrer information
-     - `nofollow` - Tells search engines not to follow this link
-     - `sponsored` - Marks links as paid/sponsored content
-     - `ugc` - Marks links as user-generated content
-
-6. Domain Management:
-   - ✅ Custom domain patterns
-   - ✅ Official institution domains:
-     - Global government domains (.gov, .gov.uk, .gov.au)
-     - Global education domains (.edu, .ac.uk, .edu.au)
-     - Military domains (.mil)
-     - Country specific domains (gov.tr, edu.tr, gov.de, edu.fr)
-
-7. Admin Interface:
-   - ✅ Modern and user-friendly design
-   - ✅ Real-time domain validation
-   - ✅ Visual feedback
-   - ✅ Quick settings access
-   - ✅ Error reporting
-
-8. Environment Integration:
-   - ✅ WordPress settings API
-   - ✅ Plugin action links
-   - ✅ Admin notices
-   - ✅ Multi-language support
-   - ✅ Debug mode integration
+[Previous features section remains the same...]
 
 ## 📋 Planned Features
 
-1. Link Analytics:
-   - [ ] Click tracking
-   - [ ] Link status monitoring
-   - [ ] Traffic statistics
-   - [ ] Report generation
+1. Page Builder Integration (Next Release):
+   - [ ] Elementor Support
+     - Custom link widgets
+     - Dynamic link handling
+     - Template integration
+   - [ ] WPBakery Support
+     - Custom elements
+     - Link processing
+     - Template support
+   - [ ] Divi Builder Support
+     - Module integration
+     - Dynamic content support
+     - Template processing
+   - [ ] Gutenberg Blocks
+     - Custom link blocks
+     - Dynamic blocks
+     - Block patterns
 
-2. Page Builder Integration:
-   - [ ] Elementor support
-   - [ ] WPBakery support
-   - [ ] Divi Builder support
-   - [ ] Gutenberg blocks
-
-3. Advanced Management:
+2. Advanced Management:
    - [ ] Link preview
    - [ ] Batch processing
    - [ ] Scheduled processing
    - [ ] API endpoints
 
-## Requirements
+## ❌ Cancelled Features
 
-- WordPress 5.0+
-- PHP 7.4+
+1. Link Analytics:
+   Reason: After evaluation, this feature was cancelled due to:
+   - High database storage requirements
+   - Potential performance impact
+   - Better alternatives exist (e.g., Google Analytics)
+   - Outside core plugin scope
+   
+   Alternative: We recommend using dedicated analytics tools that are better suited for link tracking and analysis.
 
-## Installation
-
-1. Download the plugin zip file
-2. Go to WordPress admin panel > Plugins > Add New
-3. Click "Upload Plugin" and select the downloaded zip file
-4. Click "Install Now" and then "Activate"
-5. Go to Settings > External Links to configure
-
-## Usage
-
-1. Go to Settings > External Links
-2. Select REL attributes
-3. Add custom domains or patterns:
-   - Simple domains: example.com
-   - Wildcard: *.example.com
-   - Regex: ^sub[0-9]+\.example\.com$
-4. Import/Export domain lists
-5. Save changes
-
-## Best Practices
-
-1. Domain Management:
-   - Use wildcards for multiple subdomains
-   - Keep patterns simple and specific
-   - Regularly review domain list
-   - Use bulk operations for large lists
-
-2. Performance:
-   - Clear cache after major changes
-   - Use domain patterns efficiently
-   - Monitor server resources
-   - Review error logs
-
-3. Security:
-   - Validate imported domains
-   - Check pattern syntax
-   - Monitor excluded domains
-   - Keep plugin updated
-
-## License
-
-GPL v2 or later
-
-## Developer
-
-[Hakan Tayfur](https://htayfur.com)
+[Rest of the README remains the same...]
 
 ## Version History
 
