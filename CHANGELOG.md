@@ -1,5 +1,12 @@
 # Auto External Link Modifier - Changelog
 
+## [1.1.1] - 2024-02-16
+
+### Changes
+- Converted documentation to English
+- Improved documentation structure
+- Updated version information
+
 ## [1.1.0] - 2024-02-16
 
 ### Added Features

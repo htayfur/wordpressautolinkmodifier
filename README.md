@@ -80,17 +80,22 @@ GPL v2 or later
 
 ## Version History
 
-### 1.0.0 
-- Initial release
-- External link processing in WordPress posts and pages
-- Customizable REL attributes
-- Global and local official domain support
-- Turkish language support
+### 1.1.1
+- Converted documentation to English
+- Improved documentation structure
+- Updated version information
 
-### 1.1.0
+### 1.1.0 
 - Added widget content support
 - Added custom domain list feature
 - Added advanced settings page
 - Added admin panel CSS/JS
 - Performance improvements
 - Enhanced error handling
+
+### 1.0.0 
+- Initial release
+- External link processing in WordPress posts and pages
+- Customizable REL attributes
+- Global and local official domain support
+- Turkish language support
