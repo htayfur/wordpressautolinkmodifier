@@ -18,99 +18,136 @@ class AELM_Link_Modifier {
     ];
     
     private $rel_attributes = [];
+    private $custom_domains = [];
 
     public function __construct() {
+        // İçerik filtreleri
         add_filter('the_content', [$this, 'modify_links'], 999);
-        $this->load_rel_attributes();
+        add_filter('widget_text', [$this, 'modify_links'], 999);
+        add_filter('widget_text_content', [$this, 'modify_links'], 999);
+        add_filter('widget_block_content', [$this, 'modify_links'], 999);
+
+        // Ayarları yükle
+        $this->load_settings();
+
+        // Hata yakalama
+        set_error_handler([$this, 'error_handler']);
     }
 
-    private function load_rel_attributes() {
+    private function load_settings() {
         $this->rel_attributes = get_option('aelm_rel_attributes', ['noopener', 'noreferrer', 'nofollow']);
+        $this->custom_domains = get_option('aelm_custom_domains', []);
+        
+        if (is_string($this->custom_domains)) {
+            $this->custom_domains = array_filter(array_map('trim', explode("\n", $this->custom_domains)));
+        }
+    }
+
+    public function error_handler($errno, $errstr, $errfile, $errline) {
+        if (defined('WP_DEBUG') && WP_DEBUG) {
+            error_log(sprintf(
+                '[Auto External Link Modifier] Error: %s in %s on line %d',
+                $errstr,
+                $errfile,
+                $errline
+            ));
+        }
+        return false;
     }
 
     public function modify_links($content) {
-        if (strpos($content, '<a') === false) {
+        if (!is_string($content) || empty($content) || strpos($content, '<a') === false) {
             return $content;
         }
 
-        $dom = new DOMDocument();
-        libxml_use_internal_errors(true);
-        $dom->loadHTML(mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-        libxml_clear_errors();
+        try {
+            $dom = new DOMDocument();
+            libxml_use_internal_errors(true);
+            $dom->loadHTML(mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+            libxml_clear_errors();
 
-        $modified = false;
-        $links = $dom->getElementsByTagName('a');
-        
-        $links_to_modify = [];
-        foreach ($links as $link) {
-            $links_to_modify[] = $link;
-        }
-
-        foreach ($links_to_modify as $link) {
-            $href = $link->getAttribute('href');
-
-            if (empty($href) || $this->is_internal_link($href) || $this->is_official_domain($href)) {
-                continue;
+            $modified = false;
+            $links = $dom->getElementsByTagName('a');
+            
+            $links_to_modify = [];
+            foreach ($links as $link) {
+                $links_to_modify[] = $link;
             }
 
-            $link->setAttribute('target', '_blank');
+            foreach ($links_to_modify as $link) {
+                $href = $link->getAttribute('href');
 
-            $rel = $link->getAttribute('rel');
-            $current_rels = array_filter(explode(' ', $rel));
-            $new_rels = array_unique(array_merge($current_rels, $this->rel_attributes));
-            $link->setAttribute('rel', implode(' ', $new_rels));
+                if (empty($href) || $this->is_internal_link($href) || $this->is_excluded_domain($href)) {
+                    continue;
+                }
 
-            $modified = true;
-        }
+                $link->setAttribute('target', '_blank');
 
-        if (!$modified) {
+                $rel = $link->getAttribute('rel');
+                $current_rels = array_filter(explode(' ', $rel));
+                $new_rels = array_unique(array_merge($current_rels, $this->rel_attributes));
+                $link->setAttribute('rel', implode(' ', $new_rels));
+
+                $modified = true;
+            }
+
+            if (!$modified) {
+                return $content;
+            }
+
+            $content = $dom->saveHTML();
+            return preg_replace('/^<!DOCTYPE.+?>/', '', str_replace(['<html>', '</html>', '<body>', '</body>'], '', $content));
+
+        } catch (Exception $e) {
+            if (defined('WP_DEBUG') && WP_DEBUG) {
+                error_log('[Auto External Link Modifier] Exception: ' . $e->getMessage());
+            }
             return $content;
         }
-
-        $content = $dom->saveHTML();
-        $content = preg_replace('/^<!DOCTYPE.+?>/', '', str_replace(['<html>', '</html>', '<body>', '</body>'], '', $content));
-        
-        return $content;
     }
 
     private function is_internal_link($url) {
-        $site_url = parse_url(get_site_url(), PHP_URL_HOST);
-        $link_host = parse_url($url, PHP_URL_HOST);
+        try {
+            $site_url = parse_url(get_site_url(), PHP_URL_HOST);
+            $link_host = parse_url($url, PHP_URL_HOST);
 
-        if (empty($link_host)) {
-            return true;
-        }
-
-        return $site_url === $link_host;
-    }
-
-    private function is_official_domain($url) {
-        $domain = parse_url($url, PHP_URL_HOST);
-        
-        if (empty($domain)) {
-            return false;
-        }
-
-        $domain_parts = explode('.', strtolower($domain));
-        $domain_length = count($domain_parts);
-
-        if ($domain_length < 2) {
-            return false;
-        }
-
-        // Check full domain first (e.g., education.gov.au)
-        if (in_array($domain, $this->official_domains)) {
-            return true;
-        }
-
-        // Check domain patterns
-        foreach ($this->official_domains as $official_domain) {
-            $pattern = preg_quote($official_domain, '/');
-            if (preg_match('/\.' . $pattern . '$/', $domain)) {
+            if (empty($link_host)) {
                 return true;
             }
-        }
 
-        return false;
+            return $site_url === $link_host;
+        } catch (Exception $e) {
+            error_log('[Auto External Link Modifier] URL Parse Error: ' . $e->getMessage());
+            return true;
+        }
+    }
+
+    private function is_excluded_domain($url) {
+        try {
+            $domain = parse_url($url, PHP_URL_HOST);
+            
+            if (empty($domain)) {
+                return false;
+            }
+
+            $domain = strtolower($domain);
+            
+            // Özel domain kontrolü
+            if (in_array($domain, $this->custom_domains)) {
+                return true;
+            }
+
+            // Resmi domain kontrolü
+            foreach ($this->official_domains as $official_domain) {
+                if (preg_match('/\.' . preg_quote($official_domain, '/') . '$/i', $domain)) {
+                    return true;
+                }
+            }
+
+            return false;
+        } catch (Exception $e) {
+            error_log('[Auto External Link Modifier] Domain Parse Error: ' . $e->getMessage());
+            return false;
+        }
     }
 }

@@ -1,0 +1,68 @@
+/* External Link Modifier Admin Styles */
+
+.rel-attributes-container {
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.rel-attribute-option {
+    display: block;
+    margin-bottom: 12px;
+    padding: 12px;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.rel-attribute-option:hover {
+    background: #ffffff;
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.rel-attribute-option input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.rel-attribute-option .description {
+    display: block;
+    margin-top: 4px;
+    margin-left: 24px;
+    color: #666;
+    font-size: 13px;
+}
+
+textarea.code {
+    font-family: Consolas, Monaco, monospace;
+    font-size: 13px;
+    line-height: 1.4;
+    tab-size: 4;
+}
+
+.notice.inline {
+    margin: 5px 0 15px;
+}
+
+/* Domain List Styles */
+textarea[name="aelm_custom_domains"] {
+    min-height: 150px;
+    margin-bottom: 8px;
+}
+
+/* Settings Sections */
+.form-table th {
+    padding-top: 20px;
+}
+
+/* Error Messages */
+.settings-error {
+    margin: 5px 0 15px;
+}
+
+/* Save Button */
+.submit {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
