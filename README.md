@@ -49,6 +49,32 @@ A WordPress plugin that adds custom 'rel' attributes and 'target="_blank"' to ex
    - ✅ Feature description translations
    - ✅ Admin panel translations
 
+## 📋 Planned Features
+
+1. Security Improvements:
+   - [ ] XSS protection for custom domains
+   - [ ] Nonce verification in forms
+   - [ ] Enhanced input sanitization
+
+2. Performance Optimizations:
+   - [ ] Link processing cache system
+   - [ ] Lazy loading for admin interface
+   - [ ] Background processing for large content
+
+3. Additional Features:
+   - [ ] Custom shortcode support
+   - [ ] Page builder compatibility (Elementor, WPBakery)
+   - [ ] Link statistics and analytics
+   - [ ] Bulk domain management
+   - [ ] Import/Export settings
+   - [ ] Domain wildcards support
+
+4. Developer Features:
+   - [ ] Action/Filter hooks documentation
+   - [ ] Custom domain validator support
+   - [ ] Unit tests
+   - [ ] Developer documentation
+
 ## Requirements
 
 - WordPress 5.0+
@@ -69,6 +95,16 @@ A WordPress plugin that adds custom 'rel' attributes and 'target="_blank"' to ex
 3. Optionally add custom domain list
 4. Save changes
 5. The plugin will automatically process links in your content
+
+## Known Issues
+
+1. DOM Processing:
+   - Some special characters might need additional encoding
+   - Nested content might require special handling
+
+2. Performance:
+   - Large content might need optimization
+   - Multiple widget processing could be improved
 
 ## License
 
