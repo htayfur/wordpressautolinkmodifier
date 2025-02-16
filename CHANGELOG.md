@@ -2,7 +2,18 @@
 
 ## [1.1.1] - 2024-02-16
 
-### Changes
+### Security Improvements
+- Added nonce verification for forms
+- Enhanced input sanitization
+- Improved error handling and logging
+
+### Performance Optimizations
+- Added caching system for processed content
+- Cache clearing on content updates
+- Optimized DOM processing
+- Added error recovery mechanisms
+
+### Other Changes
 - Converted documentation to English
 - Improved documentation structure
 - Updated version information

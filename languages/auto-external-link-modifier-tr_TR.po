@@ -2,10 +2,10 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Auto External Link Modifier 1.0\n"
+"Project-Id-Version: Auto External Link Modifier 1.1.1\n"
 "Report-Msgid-Bugs-To: iletisim@htayfur.com\n"
-"POT-Creation-Date: 2024-02-16 21:22+0300\n"
-"PO-Revision-Date: 2024-02-16 21:22+0300\n"
+"POT-Creation-Date: 2024-02-16 21:39+0300\n"
+"PO-Revision-Date: 2024-02-16 21:40+0300\n"
 "Last-Translator: Hakan Tayfur <iletisim@htayfur.com>\n"
 "Language-Team: Turkish <iletisim@htayfur.com>\n"
 "Language: tr_TR\n"
@@ -14,74 +14,74 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: includes/class-settings.php:16
+#: includes/class-settings.php:18
 msgid "noopener - Prevents the new page from accessing window.opener"
 msgstr "noopener - Yeni sayfanın window.opener'a erişimini engeller"
 
-#: includes/class-settings.php:17
+#: includes/class-settings.php:19
 msgid "noreferrer - Prevents passing referrer information"
 msgstr "noreferrer - Referans bilgisinin iletilmesini engeller"
 
-#: includes/class-settings.php:18
+#: includes/class-settings.php:20
 msgid "nofollow - Tells search engines not to follow this link"
 msgstr "nofollow - Arama motorlarına bu bağlantıyı takip etmemesini söyler"
 
-#: includes/class-settings.php:19
+#: includes/class-settings.php:21
 msgid "sponsored - Marks links as paid/sponsored content"
 msgstr "sponsored - Bağlantıları ücretli/sponsorlu içerik olarak işaretler"
 
-#: includes/class-settings.php:20
+#: includes/class-settings.php:22
 msgid "ugc - Marks links as user-generated content"
 msgstr "ugc - Bağlantıları kullanıcı tarafından oluşturulan içerik olarak işaretler"
 
-#: includes/class-settings.php:47
+#: includes/class-settings.php:53
 msgid "External Link Settings"
 msgstr "Dış Bağlantı Ayarları"
 
-#: includes/class-settings.php:48
+#: includes/class-settings.php:54
 msgid "External Links"
 msgstr "Dış Bağlantılar"
 
-#: includes/class-settings.php:79
+#: includes/class-settings.php:84
 msgid "Link Attributes"
 msgstr "Bağlantı Özellikleri"
 
-#: includes/class-settings.php:87
+#: includes/class-settings.php:91
 msgid "REL Attributes"
 msgstr "REL Özellikleri"
 
-#: includes/class-settings.php:96
+#: includes/class-settings.php:99
 msgid "Excluded Domains"
 msgstr "Hariç Tutulan Alan Adları"
 
-#: includes/class-settings.php:104
+#: includes/class-settings.php:106
 msgid "Custom Domains"
 msgstr "Özel Alan Adları"
 
-#: includes/class-settings.php:136
+#: includes/class-settings.php:118
+msgid "Security check failed. Please try again."
+msgstr "Güvenlik kontrolü başarısız. Lütfen tekrar deneyin."
+
+#: includes/class-settings.php:157
 msgid "Invalid domain format: %s"
 msgstr "Geçersiz alan adı formatı: %s"
 
-#: includes/class-settings.php:147
+#: includes/class-settings.php:168
 msgid "Select which rel attributes to add to external links. These attributes help with security and SEO."
 msgstr "Dış bağlantılara eklenecek rel özelliklerini seçin. Bu özellikler güvenlik ve SEO konusunda yardımcı olur."
 
-#: includes/class-settings.php:153
+#: includes/class-settings.php:174
 msgid "Add custom domains to exclude from link modifications. One domain per line."
 msgstr "Bağlantı düzenlemelerinden hariç tutulacak özel alan adlarını ekleyin. Her satıra bir alan adı."
 
-#: includes/class-settings.php:186
+#: includes/class-settings.php:207
+msgid "example.com"
+msgstr "example.com"
+
+#: includes/class-settings.php:211
 msgid "Enter one domain per line. Example: example.com"
 msgstr "Her satıra bir alan adı girin. Örnek: example.com"
 
-#: includes/class-settings.php:209
+#: includes/class-settings.php:235
 msgid "Save Changes"
 msgstr "Değişiklikleri Kaydet"
-
-#: assets/js/admin.js:44
-msgid "Invalid domain format"
-msgstr "Geçersiz alan adı formatı"
-
-#: assets/js/admin.js:74
-msgid "At least one REL attribute must be selected. Default attributes have been selected."
-msgstr "En az bir REL özelliği seçilmelidir. Varsayılan özellikler seçildi."

@@ -2,9 +2,9 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Auto External Link Modifier 1.0\n"
+"Project-Id-Version: Auto External Link Modifier 1.1.1\n"
 "Report-Msgid-Bugs-To: iletisim@htayfur.com\n"
-"POT-Creation-Date: 2024-02-16 21:22+0300\n"
+"POT-Creation-Date: 2024-02-16 21:39+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hakan Tayfur <iletisim@htayfur.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,74 +13,74 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: includes/class-settings.php:16
+#: includes/class-settings.php:18
 msgid "noopener - Prevents the new page from accessing window.opener"
 msgstr ""
 
-#: includes/class-settings.php:17
+#: includes/class-settings.php:19
 msgid "noreferrer - Prevents passing referrer information"
 msgstr ""
 
-#: includes/class-settings.php:18
+#: includes/class-settings.php:20
 msgid "nofollow - Tells search engines not to follow this link"
 msgstr ""
 
-#: includes/class-settings.php:19
+#: includes/class-settings.php:21
 msgid "sponsored - Marks links as paid/sponsored content"
 msgstr ""
 
-#: includes/class-settings.php:20
+#: includes/class-settings.php:22
 msgid "ugc - Marks links as user-generated content"
 msgstr ""
 
-#: includes/class-settings.php:47
+#: includes/class-settings.php:53
 msgid "External Link Settings"
 msgstr ""
 
-#: includes/class-settings.php:48
+#: includes/class-settings.php:54
 msgid "External Links"
 msgstr ""
 
-#: includes/class-settings.php:79
+#: includes/class-settings.php:84
 msgid "Link Attributes"
 msgstr ""
 
-#: includes/class-settings.php:87
+#: includes/class-settings.php:91
 msgid "REL Attributes"
 msgstr ""
 
-#: includes/class-settings.php:96
+#: includes/class-settings.php:99
 msgid "Excluded Domains"
 msgstr ""
 
-#: includes/class-settings.php:104
+#: includes/class-settings.php:106
 msgid "Custom Domains"
 msgstr ""
 
-#: includes/class-settings.php:136
+#: includes/class-settings.php:118
+msgid "Security check failed. Please try again."
+msgstr ""
+
+#: includes/class-settings.php:157
 msgid "Invalid domain format: %s"
 msgstr ""
 
-#: includes/class-settings.php:147
+#: includes/class-settings.php:168
 msgid "Select which rel attributes to add to external links. These attributes help with security and SEO."
 msgstr ""
 
-#: includes/class-settings.php:153
+#: includes/class-settings.php:174
 msgid "Add custom domains to exclude from link modifications. One domain per line."
 msgstr ""
 
-#: includes/class-settings.php:186
+#: includes/class-settings.php:207
+msgid "example.com"
+msgstr ""
+
+#: includes/class-settings.php:211
 msgid "Enter one domain per line. Example: example.com"
 msgstr ""
 
-#: includes/class-settings.php:209
+#: includes/class-settings.php:235
 msgid "Save Changes"
-msgstr ""
-
-#: assets/js/admin.js:44
-msgid "Invalid domain format"
-msgstr ""
-
-#: assets/js/admin.js:74
-msgid "At least one REL attribute must be selected. Default attributes have been selected."
 msgstr ""

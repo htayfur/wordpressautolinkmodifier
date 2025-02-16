@@ -6,6 +6,8 @@ if (!defined('ABSPATH')) {
 class AELM_Settings {
     private $rel_options;
     private $settings_errors = [];
+    private $nonce_action = 'aelm_settings_action';
+    private $nonce_name = 'aelm_settings_nonce';
 
     public function __construct() {
         add_action('admin_menu', [$this, 'add_settings_page']);
@@ -40,6 +42,10 @@ class AELM_Settings {
             AELM_VERSION,
             true
         );
+
+        wp_localize_script('aelm-admin-script', 'aelmSettings', [
+            'nonce' => wp_create_nonce($this->nonce_action)
+        ]);
     }
 
     public function add_settings_page() {
@@ -73,7 +79,6 @@ class AELM_Settings {
             ]
         );
 
-        // Ana Ayarlar Bölümü
         add_settings_section(
             'aelm_main_section',
             __('Link Attributes', 'auto-external-link-modifier'),
@@ -81,7 +86,6 @@ class AELM_Settings {
             'aelm-settings'
         );
 
-        // REL Özellikleri Alanı
         add_settings_field(
             'aelm_rel_attributes',
             __('REL Attributes', 'auto-external-link-modifier'),
@@ -90,7 +94,6 @@ class AELM_Settings {
             'aelm_main_section'
         );
 
-        // Hariç Tutulan Domainler Bölümü
         add_settings_section(
             'aelm_domains_section',
             __('Excluded Domains', 'auto-external-link-modifier'),
@@ -98,7 +101,6 @@ class AELM_Settings {
             'aelm-settings'
         );
 
-        // Özel Domain Listesi Alanı
         add_settings_field(
             'aelm_custom_domains',
             __('Custom Domains', 'auto-external-link-modifier'),
@@ -109,13 +111,32 @@ class AELM_Settings {
     }
 
     public function sanitize_rel_attributes($input) {
+        if (!isset($_POST[$this->nonce_name]) || !wp_verify_nonce($_POST[$this->nonce_name], $this->nonce_action)) {
+            add_settings_error(
+                'aelm_settings',
+                'invalid_nonce',
+                __('Security check failed. Please try again.', 'auto-external-link-modifier')
+            );
+            return get_option('aelm_rel_attributes', ['noopener', 'noreferrer']);
+        }
+
         if (!is_array($input)) {
             return ['noopener', 'noreferrer'];
         }
-        return array_intersect($input, array_keys($this->rel_options));
+
+        return array_map('sanitize_text_field', array_intersect($input, array_keys($this->rel_options)));
     }
 
     public function sanitize_custom_domains($input) {
+        if (!isset($_POST[$this->nonce_name]) || !wp_verify_nonce($_POST[$this->nonce_name], $this->nonce_action)) {
+            add_settings_error(
+                'aelm_settings',
+                'invalid_nonce',
+                __('Security check failed. Please try again.', 'auto-external-link-modifier')
+            );
+            return get_option('aelm_custom_domains', []);
+        }
+
         if (empty($input)) {
             return [];
         }
@@ -128,7 +149,7 @@ class AELM_Settings {
 
         $valid_domains = [];
         foreach ($domains as $domain) {
-            $domain = strtolower($domain);
+            $domain = sanitize_text_field(strtolower($domain));
             if (preg_match('/^(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,}$/', $domain)) {
                 $valid_domains[] = $domain;
             } else {
@@ -159,6 +180,7 @@ class AELM_Settings {
         
         echo '<div class="rel-attributes-container">';
         foreach ($this->rel_options as $value => $label) {
+            $value = esc_attr($value);
             $checked = in_array($value, $current_values) ? 'checked' : '';
             printf(
                 '<label class="rel-attribute-option">
@@ -166,7 +188,7 @@ class AELM_Settings {
                     <strong>%s</strong><br>
                     <span class="description">%s</span>
                 </label>',
-                esc_attr($value),
+                $value,
                 $checked,
                 esc_html($value),
                 esc_html($label)
@@ -181,7 +203,10 @@ class AELM_Settings {
             $domains = implode("\n", $domains);
         }
         ?>
-        <textarea name="aelm_custom_domains" rows="8" class="large-text code" placeholder="example.com"><?php echo esc_textarea($domains); ?></textarea>
+        <textarea name="aelm_custom_domains" rows="8" class="large-text code" 
+            placeholder="<?php esc_attr_e('example.com', 'auto-external-link-modifier'); ?>"><?php 
+            echo esc_textarea($domains); 
+        ?></textarea>
         <p class="description">
             <?php esc_html_e('Enter one domain per line. Example: example.com', 'auto-external-link-modifier'); ?>
         </p>
@@ -204,6 +229,7 @@ class AELM_Settings {
             <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
             <form action="options.php" method="post">
                 <?php
+                wp_nonce_field($this->nonce_action, $this->nonce_name);
                 settings_fields('aelm_settings');
                 do_settings_sections('aelm-settings');
                 submit_button(__('Save Changes', 'auto-external-link-modifier'));

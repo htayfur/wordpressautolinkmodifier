@@ -19,19 +19,52 @@ class AELM_Link_Modifier {
     
     private $rel_attributes = [];
     private $custom_domains = [];
+    private $cache_group = 'aelm_cache';
+    private $cache_expiration = 3600; // 1 hour
 
     public function __construct() {
-        // İçerik filtreleri
         add_filter('the_content', [$this, 'modify_links'], 999);
         add_filter('widget_text', [$this, 'modify_links'], 999);
         add_filter('widget_text_content', [$this, 'modify_links'], 999);
         add_filter('widget_block_content', [$this, 'modify_links'], 999);
 
-        // Ayarları yükle
-        $this->load_settings();
+        add_action('save_post', [$this, 'clear_cache']);
+        add_action('edited_terms', [$this, 'clear_cache']);
+        add_action('switch_theme', [$this, 'clear_cache']);
 
-        // Hata yakalama
+        $this->load_settings();
+        $this->setup_error_handling();
+    }
+
+    private function setup_error_handling() {
         set_error_handler([$this, 'error_handler']);
+        register_shutdown_function([$this, 'shutdown_handler']);
+    }
+
+    public function error_handler($errno, $errstr, $errfile, $errline) {
+        if (!(error_reporting() & $errno)) {
+            return false;
+        }
+
+        $error_message = sprintf(
+            '[Auto External Link Modifier] Error: %s in %s on line %d',
+            $errstr,
+            $errfile,
+            $errline
+        );
+
+        if (defined('WP_DEBUG') && WP_DEBUG) {
+            error_log($error_message);
+        }
+
+        return true;
+    }
+
+    public function shutdown_handler() {
+        $error = error_get_last();
+        if ($error && in_array($error['type'], [E_ERROR, E_PARSE, E_COMPILE_ERROR])) {
+            $this->error_handler($error['type'], $error['message'], $error['file'], $error['line']);
+        }
     }
 
     private function load_settings() {
@@ -43,21 +76,25 @@ class AELM_Link_Modifier {
         }
     }
 
-    public function error_handler($errno, $errstr, $errfile, $errline) {
-        if (defined('WP_DEBUG') && WP_DEBUG) {
-            error_log(sprintf(
-                '[Auto External Link Modifier] Error: %s in %s on line %d',
-                $errstr,
-                $errfile,
-                $errline
-            ));
+    public function clear_cache($post_id = null) {
+        if (function_exists('wp_cache_delete_group')) {
+            wp_cache_delete_group($this->cache_group);
+        } else {
+            wp_cache_flush();
         }
-        return false;
     }
 
     public function modify_links($content) {
         if (!is_string($content) || empty($content) || strpos($content, '<a') === false) {
             return $content;
+        }
+
+        // Generate cache key
+        $cache_key = 'aelm_' . md5($content);
+        $cached_content = wp_cache_get($cache_key, $this->cache_group);
+
+        if ($cached_content !== false) {
+            return $cached_content;
         }
 
         try {
@@ -92,11 +129,21 @@ class AELM_Link_Modifier {
             }
 
             if (!$modified) {
+                wp_cache_set($cache_key, $content, $this->cache_group, $this->cache_expiration);
                 return $content;
             }
 
-            $content = $dom->saveHTML();
-            return preg_replace('/^<!DOCTYPE.+?>/', '', str_replace(['<html>', '</html>', '<body>', '</body>'], '', $content));
+            $modified_content = preg_replace(
+                '/^<!DOCTYPE.+?>/', '', 
+                str_replace(
+                    ['<html>', '</html>', '<body>', '</body>'], 
+                    '', 
+                    $dom->saveHTML()
+                )
+            );
+
+            wp_cache_set($cache_key, $modified_content, $this->cache_group, $this->cache_expiration);
+            return $modified_content;
 
         } catch (Exception $e) {
             if (defined('WP_DEBUG') && WP_DEBUG) {
@@ -117,7 +164,7 @@ class AELM_Link_Modifier {
 
             return $site_url === $link_host;
         } catch (Exception $e) {
-            error_log('[Auto External Link Modifier] URL Parse Error: ' . $e->getMessage());
+            $this->error_handler(E_WARNING, 'URL Parse Error: ' . $e->getMessage(), __FILE__, __LINE__);
             return true;
         }
     }
@@ -132,12 +179,12 @@ class AELM_Link_Modifier {
 
             $domain = strtolower($domain);
             
-            // Özel domain kontrolü
+            // Check custom domains
             if (in_array($domain, $this->custom_domains)) {
                 return true;
             }
 
-            // Resmi domain kontrolü
+            // Check official domains
             foreach ($this->official_domains as $official_domain) {
                 if (preg_match('/\.' . preg_quote($official_domain, '/') . '$/i', $domain)) {
                     return true;
@@ -146,7 +193,7 @@ class AELM_Link_Modifier {
 
             return false;
         } catch (Exception $e) {
-            error_log('[Auto External Link Modifier] Domain Parse Error: ' . $e->getMessage());
+            $this->error_handler(E_WARNING, 'Domain Parse Error: ' . $e->getMessage(), __FILE__, __LINE__);
             return false;
         }
     }
