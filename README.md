@@ -4,28 +4,35 @@ A WordPress plugin that adds custom 'rel' attributes and 'target="_blank"' to ex
 
 ## ✅ Features
 
-1. Link Processing:
+1. System Requirements Check:
+   - ✅ PHP version compatibility check
+   - ✅ WordPress version verification
+   - ✅ Dependency validation
+   - ✅ Server configuration check
+   - ✅ Environment validation
+
+2. Link Processing:
    - ✅ Process WordPress post and page content
    - ✅ Process widget and block content
    - ✅ Add target="_blank" to external links
    - ✅ Automatically exclude internal links
    - ✅ Exclude official institution websites
 
-2. Security Features:
+3. Security Features:
    - ✅ Nonce verification for forms
    - ✅ Input sanitization
    - ✅ XSS protection
    - ✅ Secure domain validation
    - ✅ Error logging and monitoring
 
-3. Performance Features:
+4. Performance Features:
    - ✅ Content caching system
    - ✅ Optimized DOM processing
    - ✅ Smart cache invalidation
    - ✅ Error recovery mechanisms
    - ✅ Skip unnecessary processing
 
-4. REL Attributes Management:
+5. REL Attributes Management:
    - ✅ Easy management from WordPress admin panel
    - ✅ Customizable REL attributes:
      - `noopener` - Prevents the new page from accessing window.opener
@@ -34,7 +41,7 @@ A WordPress plugin that adds custom 'rel' attributes and 'target="_blank"' to ex
      - `sponsored` - Marks links as paid/sponsored content
      - `ugc` - Marks links as user-generated content
 
-5. Domain Management:
+6. Domain Management:
    - ✅ Custom domain list with validation
    - ✅ Official institution domains:
      - Global government domains (.gov, .gov.uk, .gov.au)
@@ -42,41 +49,45 @@ A WordPress plugin that adds custom 'rel' attributes and 'target="_blank"' to ex
      - Military domains (.mil)
      - Country specific domains (gov.tr, edu.tr, gov.de, edu.fr)
 
-6. Admin Interface:
+7. Admin Interface:
    - ✅ Modern and user-friendly design
    - ✅ Real-time domain validation
    - ✅ Visual feedback
-   - ✅ Helpful descriptions
+   - ✅ Quick settings access
    - ✅ Error reporting
 
-7. Multi-language Support:
-   - ✅ English interface
-   - ✅ Turkish translations
-   - ✅ Translatable strings
+8. Environment Integration:
+   - ✅ WordPress settings API
+   - ✅ Plugin action links
+   - ✅ Admin notices
+   - ✅ Multi-language support
+   - ✅ Debug mode integration
 
 ## 📋 Planned Features
 
-1. Additional Security:
-   - [ ] Role-based permissions
-   - [ ] API authentication
-   - [ ] Activity logging
+1. Advanced Domain Management:
+   - [ ] Wildcard domain support
+   - [ ] Regex pattern matching
+   - [ ] Bulk domain import/export
+   - [ ] Domain categories
 
-2. Enhanced Performance:
+2. Link Analytics:
+   - [ ] Click tracking
+   - [ ] Link status monitoring
+   - [ ] Traffic statistics
+   - [ ] Report generation
+
+3. Page Builder Integration:
+   - [ ] Elementor support
+   - [ ] WPBakery support
+   - [ ] Divi Builder support
+   - [ ] Gutenberg blocks
+
+4. Advanced Management:
+   - [ ] Link preview
    - [ ] Batch processing
-   - [ ] Background processing
-   - [ ] Network optimization
-
-3. New Features:
-   - [ ] Custom shortcode support
-   - [ ] Page builder integrations
-   - [ ] Link analytics
-   - [ ] Bulk operations
-
-4. Developer Tools:
-   - [ ] API documentation
-   - [ ] Hook documentation
-   - [ ] Unit tests
-   - [ ] E2E tests
+   - [ ] Scheduled processing
+   - [ ] API endpoints
 
 ## Requirements
 
@@ -126,15 +137,16 @@ GPL v2 or later
 
 ## Version History
 
+### 1.2.0
+- Added system requirements check
+- Added quick settings access
+- Added environment validation
+- Added admin notices
+- Enhanced error handling
+
 ### 1.1.1
 - Added comprehensive security features
-  - Nonce verification
-  - Input sanitization
-  - Error handling
 - Implemented performance optimizations
-  - Content caching
-  - DOM processing improvements
-  - Smart cache invalidation
 - Updated documentation and translations
 
 ### 1.1.0 
@@ -142,12 +154,9 @@ GPL v2 or later
 - Added custom domain list feature
 - Added advanced settings page
 - Added admin panel CSS/JS
-- Performance improvements
-- Enhanced error handling
 
 ### 1.0.0 
 - Initial release
 - External link processing
 - Customizable REL attributes
 - Official domain support
-- Turkish language support

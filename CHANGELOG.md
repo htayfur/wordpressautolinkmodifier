@@ -1,5 +1,42 @@
 # Auto External Link Modifier - Changelog
 
+## [1.2.0] - 2024-02-16
+
+### Environment Integration
+- Added system requirements check
+  - PHP version compatibility check
+  - WordPress version verification
+  - Server configuration validation
+- Added quick settings access
+  - Plugin action links
+  - Direct settings access
+  - Improved navigation
+- Enhanced admin interface
+  - Admin notices for requirements
+  - Visual status indicators
+  - Error message improvements
+
+### Plugin Enhancement
+- Added environment validation
+  - Server compatibility check
+  - Extension requirements check
+  - Configuration verification
+- Improved error handling
+  - Detailed error messages
+  - Context-aware notifications
+  - User-friendly warnings
+- Code optimization
+  - Better class organization
+  - Enhanced method structure
+  - Improved code documentation
+
+### Documentation Updates
+- Added environment requirements
+- Updated installation guide
+- Enhanced troubleshooting section
+- Added version compatibility notes
+- Updated feature documentation
+
 ## [1.1.1] - 2024-02-16
 
 ### Security Improvements
