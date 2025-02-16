@@ -4,12 +4,12 @@ A WordPress plugin that adds custom 'rel' attributes and 'target="_blank"' to ex
 
 ## ✅ Features
 
-1. System Requirements Check:
-   - ✅ PHP version compatibility check
-   - ✅ WordPress version verification
-   - ✅ Dependency validation
-   - ✅ Server configuration check
-   - ✅ Environment validation
+1. Advanced Domain Management:
+   - ✅ Wildcard domain support (*.example.com)
+   - ✅ Regex pattern matching
+   - ✅ Bulk domain operations
+   - ✅ Domain import/export
+   - ✅ Pattern validation
 
 2. Link Processing:
    - ✅ Process WordPress post and page content
@@ -42,7 +42,7 @@ A WordPress plugin that adds custom 'rel' attributes and 'target="_blank"' to ex
      - `ugc` - Marks links as user-generated content
 
 6. Domain Management:
-   - ✅ Custom domain list with validation
+   - ✅ Custom domain patterns
    - ✅ Official institution domains:
      - Global government domains (.gov, .gov.uk, .gov.au)
      - Global education domains (.edu, .ac.uk, .edu.au)
@@ -65,25 +65,19 @@ A WordPress plugin that adds custom 'rel' attributes and 'target="_blank"' to ex
 
 ## 📋 Planned Features
 
-1. Advanced Domain Management:
-   - [ ] Wildcard domain support
-   - [ ] Regex pattern matching
-   - [ ] Bulk domain import/export
-   - [ ] Domain categories
-
-2. Link Analytics:
+1. Link Analytics:
    - [ ] Click tracking
    - [ ] Link status monitoring
    - [ ] Traffic statistics
    - [ ] Report generation
 
-3. Page Builder Integration:
+2. Page Builder Integration:
    - [ ] Elementor support
    - [ ] WPBakery support
    - [ ] Divi Builder support
    - [ ] Gutenberg blocks
 
-4. Advanced Management:
+3. Advanced Management:
    - [ ] Link preview
    - [ ] Batch processing
    - [ ] Scheduled processing
@@ -106,26 +100,32 @@ A WordPress plugin that adds custom 'rel' attributes and 'target="_blank"' to ex
 
 1. Go to Settings > External Links
 2. Select REL attributes
-3. Optionally add custom domain list
-4. Save changes
-5. The plugin will automatically process links in your content
+3. Add custom domains or patterns:
+   - Simple domains: example.com
+   - Wildcard: *.example.com
+   - Regex: ^sub[0-9]+\.example\.com$
+4. Import/Export domain lists
+5. Save changes
 
 ## Best Practices
 
-1. Security:
-   - Regularly update the plugin
-   - Review excluded domains
-   - Monitor error logs
+1. Domain Management:
+   - Use wildcards for multiple subdomains
+   - Keep patterns simple and specific
+   - Regularly review domain list
+   - Use bulk operations for large lists
 
 2. Performance:
    - Clear cache after major changes
-   - Use domain wildcards for better performance
+   - Use domain patterns efficiently
    - Monitor server resources
+   - Review error logs
 
-3. Content:
-   - Review modified links periodically
-   - Test external links
-   - Update domain exclusions as needed
+3. Security:
+   - Validate imported domains
+   - Check pattern syntax
+   - Monitor excluded domains
+   - Keep plugin updated
 
 ## License
 
@@ -137,12 +137,19 @@ GPL v2 or later
 
 ## Version History
 
+### 1.2.1
+- Added wildcard domain support
+- Added regex pattern matching
+- Added bulk domain operations
+- Enhanced domain validation
+- Improved pattern matching
+
 ### 1.2.0
 - Added system requirements check
-- Added quick settings access
 - Added environment validation
-- Added admin notices
-- Enhanced error handling
+- Added quick settings access
+- Enhanced admin interface
+- Improved error handling
 
 ### 1.1.1
 - Added comprehensive security features

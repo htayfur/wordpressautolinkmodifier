@@ -19,6 +19,7 @@ class AELM_Link_Modifier {
     
     private $rel_attributes = [];
     private $custom_domains = [];
+    private $domain_patterns = [];
     private $cache_group = 'aelm_cache';
     private $cache_expiration = 3600; // 1 hour
 
@@ -28,60 +29,87 @@ class AELM_Link_Modifier {
         add_filter('widget_text_content', [$this, 'modify_links'], 999);
         add_filter('widget_block_content', [$this, 'modify_links'], 999);
 
-        add_action('save_post', [$this, 'clear_cache']);
-        add_action('edited_terms', [$this, 'clear_cache']);
-        add_action('switch_theme', [$this, 'clear_cache']);
+        // Admin AJAX handlers for bulk operations
+        add_action('wp_ajax_aelm_import_domains', [$this, 'handle_domain_import']);
+        add_action('wp_ajax_aelm_export_domains', [$this, 'handle_domain_export']);
 
         $this->load_settings();
         $this->setup_error_handling();
     }
 
-    private function setup_error_handling() {
-        set_error_handler([$this, 'error_handler']);
-        register_shutdown_function([$this, 'shutdown_handler']);
+    public function handle_domain_import() {
+        check_admin_referer('aelm_import_domains', 'nonce');
+        
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error('Permission denied');
+        }
+
+        $file = $_FILES['domain_file'] ?? null;
+        if (!$file || $file['error'] !== UPLOAD_ERR_OK) {
+            wp_send_json_error('Invalid file upload');
+        }
+
+        $content = file_get_contents($file['tmp_name']);
+        $domains = array_filter(array_map('trim', explode("\n", $content)));
+        
+        $valid_domains = array_filter($domains, [$this, 'is_valid_domain_pattern']);
+        update_option('aelm_custom_domains', $valid_domains);
+        
+        wp_send_json_success([
+            'message' => sprintf(
+                __('Imported %d domains successfully', 'auto-external-link-modifier'),
+                count($valid_domains)
+            )
+        ]);
     }
 
-    public function error_handler($errno, $errstr, $errfile, $errline) {
-        if (!(error_reporting() & $errno)) {
-            return false;
+    public function handle_domain_export() {
+        check_admin_referer('aelm_export_domains', 'nonce');
+        
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error('Permission denied');
         }
 
-        $error_message = sprintf(
-            '[Auto External Link Modifier] Error: %s in %s on line %d',
-            $errstr,
-            $errfile,
-            $errline
-        );
-
-        if (defined('WP_DEBUG') && WP_DEBUG) {
-            error_log($error_message);
-        }
-
-        return true;
-    }
-
-    public function shutdown_handler() {
-        $error = error_get_last();
-        if ($error && in_array($error['type'], [E_ERROR, E_PARSE, E_COMPILE_ERROR])) {
-            $this->error_handler($error['type'], $error['message'], $error['file'], $error['line']);
-        }
+        $domains = get_option('aelm_custom_domains', []);
+        $content = implode("\n", $domains);
+        
+        wp_send_json_success([
+            'content' => $content,
+            'filename' => 'domains-' . date('Y-m-d') . '.txt'
+        ]);
     }
 
     private function load_settings() {
         $this->rel_attributes = get_option('aelm_rel_attributes', ['noopener', 'noreferrer', 'nofollow']);
         $this->custom_domains = get_option('aelm_custom_domains', []);
+        $this->domain_patterns = array_filter($this->custom_domains, [$this, 'is_pattern']);
         
         if (is_string($this->custom_domains)) {
             $this->custom_domains = array_filter(array_map('trim', explode("\n", $this->custom_domains)));
         }
     }
 
-    public function clear_cache($post_id = null) {
-        if (function_exists('wp_cache_delete_group')) {
-            wp_cache_delete_group($this->cache_group);
-        } else {
-            wp_cache_flush();
+    private function is_pattern($domain) {
+        return strpos($domain, '*') !== false || strpos($domain, '^') !== false;
+    }
+
+    private function is_valid_domain_pattern($pattern) {
+        // Allow wildcard subdomains: *.example.com
+        if (strpos($pattern, '*.') === 0) {
+            $domain = substr($pattern, 2);
+            return $this->is_valid_domain($domain);
         }
+
+        // Allow regex patterns starting with ^
+        if (strpos($pattern, '^') === 0) {
+            return @preg_match('/' . $pattern . '/', '') !== false;
+        }
+
+        return $this->is_valid_domain($pattern);
+    }
+
+    private function is_valid_domain($domain) {
+        return (bool)preg_match('/^(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,}$/i', $domain);
     }
 
     public function modify_links($content) {
@@ -164,7 +192,7 @@ class AELM_Link_Modifier {
 
             return $site_url === $link_host;
         } catch (Exception $e) {
-            $this->error_handler(E_WARNING, 'URL Parse Error: ' . $e->getMessage(), __FILE__, __LINE__);
+            error_log('[Auto External Link Modifier] URL Parse Error: ' . $e->getMessage());
             return true;
         }
     }
@@ -179,9 +207,23 @@ class AELM_Link_Modifier {
 
             $domain = strtolower($domain);
             
-            // Check custom domains
+            // Check exact match domains
             if (in_array($domain, $this->custom_domains)) {
                 return true;
+            }
+
+            // Check wildcard patterns
+            foreach ($this->domain_patterns as $pattern) {
+                if (strpos($pattern, '*.') === 0) {
+                    $base_domain = substr($pattern, 2);
+                    if (preg_match('/\.' . preg_quote($base_domain, '/') . '$/', $domain)) {
+                        return true;
+                    }
+                } elseif (strpos($pattern, '^') === 0) {
+                    if (preg_match('/' . $pattern . '/', $domain)) {
+                        return true;
+                    }
+                }
             }
 
             // Check official domains
@@ -193,7 +235,7 @@ class AELM_Link_Modifier {
 
             return false;
         } catch (Exception $e) {
-            $this->error_handler(E_WARNING, 'Domain Parse Error: ' . $e->getMessage(), __FILE__, __LINE__);
+            error_log('[Auto External Link Modifier] Domain Parse Error: ' . $e->getMessage());
             return false;
         }
     }

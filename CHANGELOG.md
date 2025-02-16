@@ -1,5 +1,27 @@
 # Auto External Link Modifier - Changelog
 
+## [1.2.1] - 2024-02-16
+
+### Advanced Domain Management
+- Added wildcard domain support
+  - Support for *.example.com patterns
+  - Subdomain matching
+  - Domain group handling
+- Added regex pattern support
+  - Custom domain patterns
+  - Complex domain rules
+  - Pattern validation
+- Added bulk domain operations
+  - Domain import feature
+  - Domain export feature
+  - Bulk validation
+
+### Code Improvements
+- Enhanced domain validation
+- Improved pattern matching
+- Better error handling
+- Optimized domain checks
+
 ## [1.2.0] - 2024-02-16
 
 ### Environment Integration

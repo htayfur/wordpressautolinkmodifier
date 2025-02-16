@@ -3,7 +3,7 @@
  * Plugin Name: Auto External Link Modifier
  * Plugin URI: https://htayfur.com
  * Description: A WordPress plugin that adds custom 'rel' attributes and 'target="_blank"' to external links in posts and pages. Modifies all links except internal links and official institution websites.
- * Version: 1.2.0
+ * Version: 1.2.1
  * Author: Hakan Tayfur
  * Author URI: https://htayfur.com
  * License: GPL v2 or later
@@ -14,7 +14,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('AELM_VERSION', '1.2.0');
+define('AELM_VERSION', '1.2.1');
 define('AELM_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('AELM_PLUGIN_URL', plugin_dir_url(__FILE__));
 
@@ -35,8 +35,6 @@ final class Auto_External_Link_Modifier {
 
     public function __construct() {
         add_action('plugins_loaded', [$this, 'init']);
-
-        // Additional hooks for new features
         add_action('admin_init', [$this, 'check_environment']);
         add_filter('plugin_action_links_' . plugin_basename(__FILE__), [$this, 'add_action_links']);
     }
