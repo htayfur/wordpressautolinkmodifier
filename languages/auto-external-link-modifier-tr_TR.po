@@ -1,0 +1,59 @@
+# Copyright (C) 2024 Hakan Tayfur
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Auto External Link Modifier 1.0\n"
+"Report-Msgid-Bugs-To: iletisim@htayfur.com\n"
+"POT-Creation-Date: 2024-02-16 20:04+0300\n"
+"PO-Revision-Date: 2024-02-16 20:04+0300\n"
+"Last-Translator: Hakan Tayfur <iletisim@htayfur.com>\n"
+"Language-Team: Turkish <iletisim@htayfur.com>\n"
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/class-settings.php:14
+msgid "noopener - Prevents the new page from accessing window.opener"
+msgstr "noopener - Yeni sayfanın window.opener'a erişimini engeller"
+
+#: includes/class-settings.php:15
+msgid "noreferrer - Prevents passing referrer information"
+msgstr "noreferrer - Referans bilgisinin iletilmesini engeller"
+
+#: includes/class-settings.php:16
+msgid "nofollow - Tells search engines not to follow this link"
+msgstr "nofollow - Arama motorlarına bu bağlantıyı takip etmemesini söyler"
+
+#: includes/class-settings.php:17
+msgid "sponsored - Marks links as paid/sponsored content"
+msgstr "sponsored - Bağlantıları ücretli/sponsorlu içerik olarak işaretler"
+
+#: includes/class-settings.php:18
+msgid "ugc - Marks links as user-generated content"
+msgstr "ugc - Bağlantıları kullanıcı tarafından oluşturulan içerik olarak işaretler"
+
+#: includes/class-settings.php:24
+msgid "External Link Settings"
+msgstr "Dış Bağlantı Ayarları"
+
+#: includes/class-settings.php:25
+msgid "External Links"
+msgstr "Dış Bağlantılar"
+
+#: includes/class-settings.php:45
+msgid "Link Attributes"
+msgstr "Bağlantı Özellikleri"
+
+#: includes/class-settings.php:52
+msgid "REL Attributes"
+msgstr "REL Özellikleri"
+
+#: includes/class-settings.php:69
+msgid "Select which rel attributes to add to external links. These attributes help with security and SEO."
+msgstr "Dış bağlantılara eklenecek rel özelliklerini seçin. Bu özellikler güvenlik ve SEO konusunda yardımcı olur."
+
+#: includes/class-settings.php:105
+msgid "Save Changes"
+msgstr "Değişiklikleri Kaydet"

@@ -1,0 +1,58 @@
+# Copyright (C) 2024 Hakan Tayfur
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Auto External Link Modifier 1.0\n"
+"Report-Msgid-Bugs-To: iletisim@htayfur.com\n"
+"POT-Creation-Date: 2024-02-16 20:04+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Hakan Tayfur <iletisim@htayfur.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: includes/class-settings.php:14
+msgid "noopener - Prevents the new page from accessing window.opener"
+msgstr ""
+
+#: includes/class-settings.php:15
+msgid "noreferrer - Prevents passing referrer information"
+msgstr ""
+
+#: includes/class-settings.php:16
+msgid "nofollow - Tells search engines not to follow this link"
+msgstr ""
+
+#: includes/class-settings.php:17
+msgid "sponsored - Marks links as paid/sponsored content"
+msgstr ""
+
+#: includes/class-settings.php:18
+msgid "ugc - Marks links as user-generated content"
+msgstr ""
+
+#: includes/class-settings.php:24
+msgid "External Link Settings"
+msgstr ""
+
+#: includes/class-settings.php:25
+msgid "External Links"
+msgstr ""
+
+#: includes/class-settings.php:45
+msgid "Link Attributes"
+msgstr ""
+
+#: includes/class-settings.php:52
+msgid "REL Attributes"
+msgstr ""
+
+#: includes/class-settings.php:69
+msgid "Select which rel attributes to add to external links. These attributes help with security and SEO."
+msgstr ""
+
+#: includes/class-settings.php:105
+msgid "Save Changes"
+msgstr ""
