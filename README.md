@@ -2,24 +2,47 @@
 
 WordPress yazı ve sayfa içeriklerindeki dış bağlantılara özel `rel` ve `target="_blank"` ekleyen bir eklenti. İç bağlantılar ve resmi kurum web siteleri hariç tüm linkleri değiştirir.
 
-## Özellikler
+## ✅ Tamamlanan Özellikler
 
-- Dış bağlantılara otomatik olarak `target="_blank"` ekler
-- WordPress admin panelinden `rel` özelliği yönetimi:
-  - `noopener` - Yeni sayfanın window.opener'a erişimini engeller
-  - `noreferrer` - Referans bilgisinin iletilmesini engeller
-  - `nofollow` - Arama motorlarına bağlantıyı takip etmemesini söyler
-  - `sponsored` - Sponsorlu/reklamlı içerik bağlantılarını işaretler
-  - `ugc` - Kullanıcı tarafından oluşturulan içerik bağlantılarını işaretler
+1. Temel Özellikler:
+   - ✅ WordPress yazı ve sayfa içeriklerini kontrol etme
+   - ✅ Dış bağlantıları tespit etme
+   - ✅ target="_blank" ekleme
+   - ✅ İç bağlantıları hariç tutma
+   - ✅ Resmi kurumları hariç tutma
 
-## Hariç Tutulan Bağlantılar
+2. REL Özellikleri Yönetimi:
+   - ✅ WordPress admin panelinden yönetim
+   - ✅ Özelleştirilebilir rel özellikleri:
+     - ✅ noopener
+     - ✅ noreferrer
+     - ✅ nofollow
+     - ✅ sponsored
+     - ✅ ugc
 
-- İç bağlantılar (aynı domain)
-- Resmi kurumlar:
-  - Global devlet domainleri (.gov, .gov.uk, .gov.au)
-  - Global eğitim domainleri (.edu, .ac.uk, .edu.au)
-  - Askeri domainler (.mil)
-  - Ülke spesifik domainler (gov.tr, edu.tr, gov.de, edu.fr)
+3. Resmi Domain Kontrolü:
+   - ✅ Global devlet domainleri (.gov, .gov.uk, .gov.au)
+   - ✅ Global eğitim domainleri (.edu, .ac.uk, .edu.au)
+   - ✅ Askeri domainler (.mil)
+   - ✅ Ülke spesifik domainler (gov.tr, edu.tr, gov.de, edu.fr)
+
+4. Çoklu Dil Desteği:
+   - ✅ Türkçe dil dosyaları
+   - ✅ Özellik açıklamaları çevirileri
+   - ✅ Admin panel çevirileri
+
+## 📋 Yapılması Planlananlar
+
+1. İyileştirmeler:
+   - [ ] Performans optimizasyonları
+   - [ ] Hata yakalama geliştirmeleri
+   - [ ] Domain listesi genişletme
+
+2. Yeni Özellikler:
+   - [ ] Özel domain listesi ekleme imkanı
+   - [ ] Özel rel özelliği tanımlama
+   - [ ] Gelişmiş ayar sayfası
+   - [ ] Widget içerik desteği
 
 ## Gereksinimler
 
