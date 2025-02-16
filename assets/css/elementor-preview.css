@@ -1,0 +1,92 @@
+/* Elementor Preview Styles */
+
+.elementor-widget-aelm_smart_link .aelm-smart-link {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.elementor-widget-aelm_smart_link .aelm-smart-link:hover {
+    opacity: 0.8;
+}
+
+.elementor-widget-aelm_smart_link .aelm-smart-link[target="_blank"]::after {
+    content: "\f08e";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-left: 5px;
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+.elementor-widget-aelm_smart_link .aelm-smart-link[rel*="nofollow"]::before {
+    content: "\f023";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 5px;
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+/* Editor Mode Styles */
+.elementor-editor-active .elementor-widget-aelm_smart_link {
+    position: relative;
+}
+
+.elementor-editor-active .elementor-widget-aelm_smart_link::before {
+    content: "Smart Link";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    background: #556068;
+    color: #fff;
+    padding: 3px 7px;
+    font-size: 11px;
+    border-radius: 3px;
+    z-index: 999;
+}
+
+/* Widget States */
+.elementor-widget-aelm_smart_link.excluded::before {
+    background: #d30c5c;
+}
+
+.elementor-widget-aelm_smart_link.processing::before {
+    background: #71d7f7;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .elementor-widget-aelm_smart_link .aelm-smart-link {
+        display: block;
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+/* Loading State */
+.elementor-widget-aelm_smart_link.loading .aelm-smart-link {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.elementor-widget-aelm_smart_link.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-top-color: #000;
+    border-radius: 50%;
+    animation: aelm-spin 1s linear infinite;
+}
+
+@keyframes aelm-spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
