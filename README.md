@@ -1,96 +1,96 @@
 # Auto External Link Modifier
 
-WordPress yazı ve sayfa içeriklerindeki dış bağlantılara özel `rel` ve `target="_blank"` ekleyen bir eklenti. İç bağlantılar ve resmi kurum web siteleri hariç tüm linkleri değiştirir.
+A WordPress plugin that adds custom 'rel' attributes and 'target="_blank"' to external links in posts and pages. It modifies all links except internal links and official institution websites.
 
-## ✅ Tamamlanan Özellikler
+## ✅ Features
 
-1. Bağlantı İşleme:
-   - ✅ WordPress yazı ve sayfa içeriklerini kontrol etme
-   - ✅ Widget ve blok içeriklerini kontrol etme
-   - ✅ Dış bağlantılara target="_blank" ekleme
-   - ✅ İç bağlantıları otomatik hariç tutma
-   - ✅ Resmi kurumları hariç tutma
+1. Link Processing:
+   - ✅ Process WordPress post and page content
+   - ✅ Process widget and block content
+   - ✅ Add target="_blank" to external links
+   - ✅ Automatically exclude internal links
+   - ✅ Exclude official institution websites
 
-2. REL Özellikleri Yönetimi:
-   - ✅ WordPress admin panelinden kolay yönetim
-   - ✅ Özelleştirilebilir REL özellikleri:
-     - `noopener` - Yeni sayfanın window.opener'a erişimini engeller
-     - `noreferrer` - Referans bilgisinin iletilmesini engeller
-     - `nofollow` - Arama motorlarına bağlantıyı takip etmemesini söyler
-     - `sponsored` - Sponsorlu/reklamlı içerik bağlantılarını işaretler
-     - `ugc` - Kullanıcı tarafından oluşturulan içerik bağlantılarını işaretler
+2. REL Attributes Management:
+   - ✅ Easy management from WordPress admin panel
+   - ✅ Customizable REL attributes:
+     - `noopener` - Prevents the new page from accessing window.opener
+     - `noreferrer` - Prevents passing referrer information
+     - `nofollow` - Tells search engines not to follow this link
+     - `sponsored` - Marks links as paid/sponsored content
+     - `ugc` - Marks links as user-generated content
 
-3. Özel Domain Yönetimi:
-   - ✅ Özel domain listesi ekleme
-   - ✅ Domain formatı otomatik kontrolü
-   - ✅ Her satıra bir domain girişi
-   - ✅ Kolay domain yönetimi
+3. Custom Domain Management:
+   - ✅ Add custom domain list
+   - ✅ Automatic domain format validation
+   - ✅ One domain per line input
+   - ✅ Easy domain management
 
-4. Resmi Domain Kontrolü:
-   - ✅ Global devlet domainleri (.gov, .gov.uk, .gov.au)
-   - ✅ Global eğitim domainleri (.edu, .ac.uk, .edu.au)
-   - ✅ Askeri domainler (.mil)
-   - ✅ Ülke spesifik domainler (gov.tr, edu.tr, gov.de, edu.fr)
+4. Official Domain Control:
+   - ✅ Global government domains (.gov, .gov.uk, .gov.au)
+   - ✅ Global education domains (.edu, .ac.uk, .edu.au)
+   - ✅ Military domains (.mil)
+   - ✅ Country specific domains (gov.tr, edu.tr, gov.de, edu.fr)
 
-5. Performans İyileştirmeleri:
-   - ✅ DOM işleme optimizasyonu
-   - ✅ Hata yakalama ve loglama
-   - ✅ Gereksiz işlemleri atlama
-   - ✅ Minify edilmiş CSS/JS
+5. Performance Improvements:
+   - ✅ DOM processing optimization
+   - ✅ Error catching and logging
+   - ✅ Skip unnecessary processing
+   - ✅ Minified CSS/JS
 
-6. Gelişmiş Ayarlar:
-   - ✅ Modern ve kullanıcı dostu arayüz
-   - ✅ Gerçek zamanlı domain validasyonu
-   - ✅ Görsel geri bildirimler
-   - ✅ Yardımcı açıklamalar
+6. Advanced Settings:
+   - ✅ Modern and user-friendly interface
+   - ✅ Real-time domain validation
+   - ✅ Visual feedback
+   - ✅ Helpful descriptions
 
-7. Çoklu Dil Desteği:
-   - ✅ Türkçe dil dosyaları
-   - ✅ Özellik açıklamaları çevirileri
-   - ✅ Admin panel çevirileri
+7. Multi-language Support:
+   - ✅ Turkish language files
+   - ✅ Feature description translations
+   - ✅ Admin panel translations
 
-## Gereksinimler
+## Requirements
 
 - WordPress 5.0+
 - PHP 7.4+
 
-## Kurulum
+## Installation
 
-1. Eklenti zip dosyasını indirin
-2. WordPress admin paneli > Eklentiler > Yeni Ekle
-3. "Eklenti Yükle" butonuna tıklayın ve zip dosyasını seçin
-4. "Şimdi Yükle" ve ardından "Etkinleştir"
-5. Ayarlar > Dış Bağlantılar menüsünden yapılandırın
+1. Download the plugin zip file
+2. Go to WordPress admin panel > Plugins > Add New
+3. Click "Upload Plugin" and select the downloaded zip file
+4. Click "Install Now" and then "Activate"
+5. Go to Settings > External Links to configure
 
-## Kullanım
+## Usage
 
-1. Ayarlar > Dış Bağlantılar menüsüne gidin
-2. REL özelliklerini seçin
-3. İsteğe bağlı olarak özel domain listesi ekleyin
-4. Değişiklikleri kaydedin
-5. Eklenti otomatik olarak içeriklerdeki bağlantıları düzenleyecektir
+1. Go to Settings > External Links
+2. Select REL attributes
+3. Optionally add custom domain list
+4. Save changes
+5. The plugin will automatically process links in your content
 
-## Lisans
+## License
 
-GPL v2 veya üzeri
+GPL v2 or later
 
-## Geliştirici
+## Developer
 
 [Hakan Tayfur](https://htayfur.com)
 
-## Sürüm Geçmişi
+## Version History
 
 ### 1.0.0 
-- İlk sürüm
-- WordPress yazı ve sayfalarda dış bağlantı düzenleme
-- Özelleştirilebilir REL özellikleri
-- Global ve yerel resmi domain desteği
-- Türkçe dil desteği
+- Initial release
+- External link processing in WordPress posts and pages
+- Customizable REL attributes
+- Global and local official domain support
+- Turkish language support
 
 ### 1.1.0
-- Widget içerik desteği eklendi
-- Özel domain listesi özelliği eklendi
-- Gelişmiş ayar sayfası eklendi
-- Admin panel CSS/JS eklendi
-- Performans iyileştirmeleri yapıldı
-- Hata yakalama geliştirildi
+- Added widget content support
+- Added custom domain list feature
+- Added advanced settings page
+- Added admin panel CSS/JS
+- Performance improvements
+- Enhanced error handling
