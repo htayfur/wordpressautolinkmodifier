@@ -6,50 +6,75 @@ A WordPress plugin that adds custom 'rel' attributes and 'target="_blank"' to ex
 
 ### 1. Core Link Processing
 - Automatic external link detection
-- Smart domain recognition
 - Custom rel attribute management
 - Target attribute handling
-- Excluded domains management
+- Smart domain recognition
+- Excluded domains list
+- Official institution exceptions
+- Bulk link processing
+- Link validation
 
 ### 2. Security Features
-- Domain validation
 - XSS protection
+- Domain validation
 - Input sanitization
-- Secure token handling
+- Token verification
 - Error monitoring
 - Access control
+- SQL injection prevention
+- Safe domain handling
 
 ### 3. Page Builder Integration
-- ✅ **Elementor Support**
-  - Custom Smart Link widget
-  - Visual editing interface
-  - Dynamic content support
-  - Template integration
 
-- ✅ **WPBakery Support**
-  - Custom shortcode element
-  - Visual composer integration
-  - Backend editor support
-  - Template system
+#### Elementor Support
+- Custom Smart Link widget
+- Visual editing interface
+- Dynamic content support
+- Template integration
+- Live preview
+- Custom styling options
+- Advanced animations
+- Responsive controls
 
-- ✅ **Divi Builder Support**
-  - Custom link module
-  - Visual builder compatibility
-  - Dynamic content handling
-  - Template support
+#### WPBakery Support
+- Custom shortcode element
+- Visual composer integration
+- Backend editor support
+- Template system
+- Design options
+- Custom parameters
+- Grid integration
+- Layout controls
 
-- ✅ **Gutenberg Support**
-  - Custom link block
-  - Rich text integration
-  - Block patterns
-  - Full-site editing ready
+#### Divi Builder Support
+- Custom link module
+- Visual builder compatibility
+- Dynamic content handling
+- Template support
+- Advanced styling
+- Module options
+- Custom effects
+- Global presets
+
+#### Gutenberg Support
+- Custom link block
+- Rich text integration
+- Block patterns
+- Full-site editing ready
+- Reusable blocks
+- Custom styles
+- Block variations
+- Inspector controls
 
 ### 4. Performance Features
 - Smart caching system
-- Optimized processing
-- Resource efficiency
-- Lazy loading support
 - Memory optimization
+- Lazy processing
+- Resource efficiency
+- Database optimization
+- Query caching
+- Bulk operations
+- Async processing
 
 ### 5. Developer Features
 - Extensible architecture
@@ -57,10 +82,13 @@ A WordPress plugin that adds custom 'rel' attributes and 'target="_blank"' to ex
 - Custom API endpoints
 - Developer documentation
 - Code examples
+- Unit tests
+- CI/CD support
+- Debug tools
 
 ## 🌍 Supported Languages
 
-The plugin is available in the following languages:
+The plugin is available in 15 languages:
 
 1. English (en_US) - Default
 2. Spanish (es_ES) - Español
@@ -80,96 +108,101 @@ The plugin is available in the following languages:
 
 ## 🔧 Requirements
 
+### Core Requirements
 - WordPress 5.0+
 - PHP 7.4+
-- One or more supported page builders (optional):
-  - Elementor
-  - WPBakery Page Builder
-  - Divi Builder
+- MySQL 5.6+ or MariaDB 10.0+
+- Modern web browser
+
+### Optional Requirements
+- Elementor 3.0+
+- WPBakery Page Builder 6.0+
+- Divi Builder 4.0+
+- WordPress Block Editor (Gutenberg)
 
 ## 📦 Installation
 
-1. Download the plugin
+### Automatic Installation
+1. Go to WordPress admin > Plugins > Add New
+2. Search for "Auto External Link Modifier"
+3. Click "Install Now"
+4. Activate the plugin
+
+### Manual Installation
+1. Download the plugin zip file
 2. Go to WordPress admin > Plugins > Add New
 3. Click "Upload Plugin"
 4. Upload the zip file
 5. Activate the plugin
-6. Configure settings
 
 ## 🛠️ Configuration
 
 ### General Settings
 1. Go to Settings > External Links
-2. Configure general settings
-3. Set up builder preferences
-4. Customize link attributes
+2. Configure link attributes
+3. Set excluded domains
+4. Customize processing rules
 5. Save changes
 
 ### Page Builder Settings
+
 #### Elementor
 1. Edit with Elementor
 2. Find "Smart Link" widget
 3. Drag and drop
-4. Configure settings
+4. Configure options:
+   - Link settings
+   - Style options
+   - Advanced settings
+   - Custom CSS
 
 #### WPBakery
 1. Add new element
 2. Select "Smart Link"
-3. Configure options
-4. Save changes
+3. Configure settings:
+   - Link parameters
+   - Design options
+   - Custom styles
+   - Responsive settings
 
 #### Divi
 1. Open Divi Builder
 2. Add Smart Link module
-3. Customize settings
-4. Save layout
+3. Configure options:
+   - Link settings
+   - Advanced settings
+   - Custom CSS
+   - Responsive design
 
 #### Gutenberg
 1. Add Smart Link block
-2. Configure in sidebar
-3. Customize appearance
-4. Update page
-
-## 🔄 Version History
-
-### 2.0.2
-- Added multi-language support
-- Added 15 language translations
-- Added translation management tools
-- Added MO file generation
-
-### 2.0.1
-- Added function polyfills
-- Fixed compatibility issues
-- Enhanced error handling
-- Improved plugin initialization
-
-### 2.0.0
-- Added Page Builder integrations
-- Added Smart Link components
-- Added visual builder support
-- Enhanced UI/UX
-
-### 1.0.0
-- Initial release
-- Basic link processing
-- Domain exclusion
-- Security features
+2. Configure in sidebar:
+   - Link options
+   - Block styles
+   - Advanced settings
+   - Custom CSS
 
 ## 🤝 Contributing
 
 ### Code Contributions
 1. Fork the repository
 2. Create feature branch
-3. Commit changes
-4. Push to branch
-5. Create Pull Request
+3. Write clean, documented code
+4. Add unit tests
+5. Create pull request
 
 ### Translation Contributions
 1. Fork the repository
-2. Use POEdit to edit language files
-3. Submit pull request with changes
-4. Include both PO and MO files
+2. Use POEdit for translations
+3. Test in your language
+4. Submit pull request
+
+### Bug Reports
+1. Check existing issues
+2. Provide clear description
+3. Include steps to reproduce
+4. Add screenshots if possible
+5. Submit issue
 
 ## 🛡️ License
 
@@ -181,5 +214,5 @@ GPL v2 or later
 
 ## 📝 Documentation
 
-Full documentation available at:
+Detailed documentation available at:
 [Project Wiki](https://github.com/htayfur/wordpressautolinkmodifier/wiki)
