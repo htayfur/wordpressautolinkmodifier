@@ -18,36 +18,36 @@ define('AELM_VERSION', '2.0.0');
 define('AELM_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('AELM_PLUGIN_URL', plugin_dir_url(__FILE__));
 
+// Plugin autoloader
 spl_autoload_register(function ($class) {
-    // Project-specific namespace prefix
     $prefix = 'AELM_';
     $base_dir = AELM_PLUGIN_DIR . 'includes/';
-
-    // Check if the class uses the namespace prefix
     $len = strlen($prefix);
+
     if (strncmp($prefix, $class, $len) !== 0) {
         return;
     }
 
-    // Get the relative class name
     $relative_class = substr($class, $len);
     $relative_class = strtolower(str_replace('_', '-', $relative_class));
-
-    // Replace namespace separators with directory separators
     $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
     
-    // If the file exists, require it
     if (file_exists($file)) {
         require $file;
     }
 });
 
+// Required core files
+require_once AELM_PLUGIN_DIR . 'includes/class-plugin-loader.php';
+require_once AELM_PLUGIN_DIR . 'includes/class-compatibility-checker.php';
 require_once AELM_PLUGIN_DIR . 'includes/builders/class-builder-interface.php';
 require_once AELM_PLUGIN_DIR . 'includes/class-link-modifier.php';
 require_once AELM_PLUGIN_DIR . 'includes/class-settings.php';
 
 final class Auto_External_Link_Modifier {
     private static $instance = null;
+    public $loader;
+    public $compatibility;
     public $link_modifier;
     public $settings;
     public $builders = [];
@@ -60,9 +60,17 @@ final class Auto_External_Link_Modifier {
     }
 
     public function __construct() {
-        add_action('plugins_loaded', [$this, 'init']);
-        add_action('admin_init', [$this, 'check_environment']);
-        add_filter('plugin_action_links_' . plugin_basename(__FILE__), [$this, 'add_action_links']);
+        $this->loader = new AELM_Plugin_Loader();
+        $this->compatibility = new AELM_Compatibility_Checker();
+        
+        if ($this->compatibility->check_all()) {
+            $this->loader->add_action('plugins_loaded', $this, 'init');
+            $this->loader->add_action('admin_init', $this, 'check_environment');
+            $this->loader->add_filter('plugin_action_links_' . plugin_basename(__FILE__), $this, 'add_action_links');
+            $this->loader->run();
+        } else {
+            $this->compatibility->display_notices();
+        }
     }
 
     public function init() {
@@ -97,7 +105,7 @@ final class Auto_External_Link_Modifier {
 
     public function check_environment() {
         if (version_compare(PHP_VERSION, '7.4', '<')) {
-            add_action('admin_notices', function() {
+            $this->loader->add_action('admin_notices', function() {
                 echo '<div class="notice notice-error"><p>';
                 echo esc_html__('Auto External Link Modifier requires PHP 7.4 or higher.', 'auto-external-link-modifier');
                 echo '</p></div>';
@@ -105,7 +113,7 @@ final class Auto_External_Link_Modifier {
         }
 
         if (version_compare($GLOBALS['wp_version'], '5.0', '<')) {
-            add_action('admin_notices', function() {
+            $this->loader->add_action('admin_notices', function() {
                 echo '<div class="notice notice-error"><p>';
                 echo esc_html__('Auto External Link Modifier requires WordPress 5.0 or higher.', 'auto-external-link-modifier');
                 echo '</p></div>';
@@ -113,27 +121,11 @@ final class Auto_External_Link_Modifier {
         }
 
         // Check for page builders
-        $missing_builders = [];
-        
-        if (!defined('ELEMENTOR_VERSION')) {
-            $missing_builders[] = 'Elementor';
-        }
-        
-        if (!defined('WPB_VC_VERSION')) {
-            $missing_builders[] = 'WPBakery Page Builder';
-        }
-
-        if (!defined('ET_BUILDER_VERSION')) {
-            $missing_builders[] = 'Divi Builder';
-        }
-
+        $missing_builders = $this->compatibility->get_error_messages();
         if (!empty($missing_builders)) {
-            add_action('admin_notices', function() use ($missing_builders) {
+            $this->loader->add_action('admin_notices', function() use ($missing_builders) {
                 echo '<div class="notice notice-warning is-dismissible"><p>';
-                printf(
-                    esc_html__('For full functionality, Auto External Link Modifier recommends installing: %s', 'auto-external-link-modifier'),
-                    implode(', ', $missing_builders)
-                );
+                echo esc_html(implode(' ', $missing_builders));
                 echo '</p></div>';
             });
         }
