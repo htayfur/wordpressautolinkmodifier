@@ -3,87 +3,87 @@ msgstr ""
 "Project-Id-Version: Auto External Link Modifier 2.0.1\n"
 "Report-Msgid-Bugs-To: iletisim@htayfur.com\n"
 "POT-Creation-Date: 2024-02-17 12:23+0300\n"
-"PO-Revision-Date: 2024-02-17 12:24+0300\n"
+"PO-Revision-Date: 2024-02-17 12:35+0300\n"
 "Last-Translator: Hakan Tayfur <iletisim@htayfur.com>\n"
-"Language-Team: Turkish <iletisim@htayfur.com>\n"
-"Language: tr_TR\n"
+"Language-Team: Japanese <iletisim@htayfur.com>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.4.2\n"
 
 msgid "External Link Settings"
-msgstr "Dış Bağlantı Ayarları"
+msgstr "外部リンク設定"
 
 msgid "External Links"
-msgstr "Dış Bağlantılar"
+msgstr "外部リンク"
 
 msgid "Link Settings"
-msgstr "Bağlantı Ayarları"
+msgstr "リンク設定"
 
 msgid "REL Attributes"
-msgstr "REL Özellikleri"
+msgstr "REL属性"
 
 msgid "Excluded Domains"
-msgstr "Hariç Tutulan Alan Adları"
+msgstr "除外ドメイン"
 
 msgid "Custom Domains"
-msgstr "Özel Alan Adları"
+msgstr "カスタムドメイン"
 
 msgid "Security check failed. Please try again."
-msgstr "Güvenlik kontrolü başarısız. Lütfen tekrar deneyin."
+msgstr "セキュリティチェックに失敗しました。もう一度お試しください。"
 
 msgid "Invalid domain format: %s"
-msgstr "Geçersiz alan adı formatı: %s"
+msgstr "無効なドメイン形式：%s"
 
 msgid "Select which rel attributes to add to external links. These attributes help with security and SEO."
-msgstr "Dış bağlantılara eklenecek rel özelliklerini seçin. Bu özellikler güvenlik ve SEO konusunda yardımcı olur."
+msgstr "外部リンクに追加するrel属性を選択します。これらの属性はセキュリティとSEOに役立ちます。"
 
 msgid "Add custom domains to exclude from link modifications. One domain per line."
-msgstr "Bağlantı düzenlemelerinden hariç tutulacak özel alan adlarını ekleyin. Her satıra bir alan adı."
+msgstr "リンク変更から除外するカスタムドメインを追加します。1行に1つのドメイン。"
 
 msgid "example.com"
 msgstr "example.com"
 
 msgid "Enter one domain per line. Example: example.com"
-msgstr "Her satıra bir alan adı girin. Örnek: example.com"
+msgstr "1行に1つのドメインを入力してください。例：example.com"
 
 msgid "Save Changes"
-msgstr "Değişiklikleri Kaydet"
+msgstr "変更を保存"
 
 msgid "Auto External Link Modifier requires PHP 7.4 or higher."
-msgstr "Auto External Link Modifier PHP 7.4 veya üstünü gerektirir."
+msgstr "Auto External Link ModifierにはPHP 7.4以上が必要です。"
 
 msgid "Auto External Link Modifier requires WordPress 5.0 or higher."
-msgstr "Auto External Link Modifier WordPress 5.0 veya üstünü gerektirir."
+msgstr "Auto External Link ModifierにはWordPress 5.0以上が必要です。"
 
 msgid "Smart Link"
-msgstr "Akıllı Bağlantı"
+msgstr "スマートリンク"
 
 msgid "Link URL"
-msgstr "Bağlantı URL'si"
+msgstr "リンクURL"
 
 msgid "Open in New Tab"
-msgstr "Yeni Sekmede Aç"
+msgstr "新しいタブで開く"
 
 msgid "Exclude from Processing"
-msgstr "İşlemden Hariç Tut"
+msgstr "処理から除外"
 
 msgid "Exclude this link from automatic modifications"
-msgstr "Bu bağlantıyı otomatik değişikliklerden hariç tut"
+msgstr "このリンクを自動変更から除外する"
 
 msgid "Link Elements"
-msgstr "Bağlantı Elemanları"
+msgstr "リンク要素"
 
 msgid "Link Content"
-msgstr "Bağlantı İçeriği"
+msgstr "リンクコンテンツ"
 
 msgid "External Link Blocks"
-msgstr "Dış Bağlantı Blokları"
+msgstr "外部リンクブロック"
 
 msgid "Missing required plugins: %s"
-msgstr "Gerekli eklentiler eksik: %s"
+msgstr "必要なプラグインが不足しています：%s"
 
 msgid "Settings"
-msgstr "Ayarlar"
+msgstr "設定"

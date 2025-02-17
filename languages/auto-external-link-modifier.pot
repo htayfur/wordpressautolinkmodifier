@@ -2,36 +2,16 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Auto External Link Modifier 1.1.1\n"
+"Project-Id-Version: Auto External Link Modifier 2.0.1\n"
 "Report-Msgid-Bugs-To: iletisim@htayfur.com\n"
-"POT-Creation-Date: 2024-02-16 21:39+0300\n"
+"POT-Creation-Date: 2024-02-17 12:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Hakan Tayfur <iletisim@htayfur.com>\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: includes/class-settings.php:18
-msgid "noopener - Prevents the new page from accessing window.opener"
-msgstr ""
-
-#: includes/class-settings.php:19
-msgid "noreferrer - Prevents passing referrer information"
-msgstr ""
-
-#: includes/class-settings.php:20
-msgid "nofollow - Tells search engines not to follow this link"
-msgstr ""
-
-#: includes/class-settings.php:21
-msgid "sponsored - Marks links as paid/sponsored content"
-msgstr ""
-
-#: includes/class-settings.php:22
-msgid "ugc - Marks links as user-generated content"
-msgstr ""
 
 #: includes/class-settings.php:53
 msgid "External Link Settings"
@@ -42,7 +22,7 @@ msgid "External Links"
 msgstr ""
 
 #: includes/class-settings.php:84
-msgid "Link Attributes"
+msgid "Link Settings"
 msgstr ""
 
 #: includes/class-settings.php:91
@@ -83,4 +63,52 @@ msgstr ""
 
 #: includes/class-settings.php:235
 msgid "Save Changes"
+msgstr ""
+
+#: auto-external-link-modifier.php:110
+msgid "Auto External Link Modifier requires PHP 7.4 or higher."
+msgstr ""
+
+#: auto-external-link-modifier.php:118
+msgid "Auto External Link Modifier requires WordPress 5.0 or higher."
+msgstr ""
+
+#: includes/builders/class-elementor-builder.php:66
+msgid "Smart Link"
+msgstr ""
+
+#: includes/builders/class-elementor-builder.php:78
+msgid "Link URL"
+msgstr ""
+
+#: includes/builders/class-elementor-builder.php:86
+msgid "Open in New Tab"
+msgstr ""
+
+#: includes/builders/class-elementor-builder.php:96
+msgid "Exclude from Processing"
+msgstr ""
+
+#: includes/builders/class-elementor-builder.php:98
+msgid "Exclude this link from automatic modifications"
+msgstr ""
+
+#: includes/builders/class-wpbakery-builder.php:53
+msgid "Link Elements"
+msgstr ""
+
+#: includes/builders/class-divi-builder.php:83
+msgid "Link Content"
+msgstr ""
+
+#: includes/builders/class-gutenberg-builder.php:66
+msgid "External Link Blocks"
+msgstr ""
+
+#: includes/builders/class-compatibility-checker.php:130
+msgid "Missing required plugins: %s"
+msgstr ""
+
+#: includes/class-plugin-loader.php:136
+msgid "Settings"
 msgstr ""

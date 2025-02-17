@@ -1,0 +1,89 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Auto External Link Modifier 2.0.1\n"
+"Report-Msgid-Bugs-To: iletisim@htayfur.com\n"
+"POT-Creation-Date: 2024-02-17 12:23+0300\n"
+"PO-Revision-Date: 2024-02-17 12:36+0300\n"
+"Last-Translator: Hakan Tayfur <iletisim@htayfur.com>\n"
+"Language-Team: Russian <iletisim@htayfur.com>\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+msgid "External Link Settings"
+msgstr "Настройки внешних ссылок"
+
+msgid "External Links"
+msgstr "Внешние ссылки"
+
+msgid "Link Settings"
+msgstr "Настройки ссылок"
+
+msgid "REL Attributes"
+msgstr "Атрибуты REL"
+
+msgid "Excluded Domains"
+msgstr "Исключенные домены"
+
+msgid "Custom Domains"
+msgstr "Пользовательские домены"
+
+msgid "Security check failed. Please try again."
+msgstr "Проверка безопасности не удалась. Пожалуйста, попробуйте снова."
+
+msgid "Invalid domain format: %s"
+msgstr "Неверный формат домена: %s"
+
+msgid "Select which rel attributes to add to external links. These attributes help with security and SEO."
+msgstr "Выберите атрибуты rel для добавления к внешним ссылкам. Эти атрибуты помогают с безопасностью и SEO."
+
+msgid "Add custom domains to exclude from link modifications. One domain per line."
+msgstr "Добавьте пользовательские домены для исключения из модификаций ссылок. Один домен на строку."
+
+msgid "example.com"
+msgstr "example.com"
+
+msgid "Enter one domain per line. Example: example.com"
+msgstr "Введите один домен на строку. Пример: example.com"
+
+msgid "Save Changes"
+msgstr "Сохранить изменения"
+
+msgid "Auto External Link Modifier requires PHP 7.4 or higher."
+msgstr "Auto External Link Modifier требует PHP 7.4 или выше."
+
+msgid "Auto External Link Modifier requires WordPress 5.0 or higher."
+msgstr "Auto External Link Modifier требует WordPress 5.0 или выше."
+
+msgid "Smart Link"
+msgstr "Умная ссылка"
+
+msgid "Link URL"
+msgstr "URL ссылки"
+
+msgid "Open in New Tab"
+msgstr "Открыть в новой вкладке"
+
+msgid "Exclude from Processing"
+msgstr "Исключить из обработки"
+
+msgid "Exclude this link from automatic modifications"
+msgstr "Исключить эту ссылку из автоматических модификаций"
+
+msgid "Link Elements"
+msgstr "Элементы ссылки"
+
+msgid "Link Content"
+msgstr "Содержимое ссылки"
+
+msgid "External Link Blocks"
+msgstr "Блоки внешних ссылок"
+
+msgid "Missing required plugins: %s"
+msgstr "Отсутствуют необходимые плагины: %s"
+
+msgid "Settings"
+msgstr "Настройки"

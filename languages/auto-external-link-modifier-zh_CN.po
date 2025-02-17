@@ -3,87 +3,87 @@ msgstr ""
 "Project-Id-Version: Auto External Link Modifier 2.0.1\n"
 "Report-Msgid-Bugs-To: iletisim@htayfur.com\n"
 "POT-Creation-Date: 2024-02-17 12:23+0300\n"
-"PO-Revision-Date: 2024-02-17 12:24+0300\n"
+"PO-Revision-Date: 2024-02-17 12:34+0300\n"
 "Last-Translator: Hakan Tayfur <iletisim@htayfur.com>\n"
-"Language-Team: Turkish <iletisim@htayfur.com>\n"
-"Language: tr_TR\n"
+"Language-Team: Chinese (Simplified) <iletisim@htayfur.com>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.4.2\n"
 
 msgid "External Link Settings"
-msgstr "Dış Bağlantı Ayarları"
+msgstr "外部链接设置"
 
 msgid "External Links"
-msgstr "Dış Bağlantılar"
+msgstr "外部链接"
 
 msgid "Link Settings"
-msgstr "Bağlantı Ayarları"
+msgstr "链接设置"
 
 msgid "REL Attributes"
-msgstr "REL Özellikleri"
+msgstr "REL属性"
 
 msgid "Excluded Domains"
-msgstr "Hariç Tutulan Alan Adları"
+msgstr "排除的域名"
 
 msgid "Custom Domains"
-msgstr "Özel Alan Adları"
+msgstr "自定义域名"
 
 msgid "Security check failed. Please try again."
-msgstr "Güvenlik kontrolü başarısız. Lütfen tekrar deneyin."
+msgstr "安全检查失败。请重试。"
 
 msgid "Invalid domain format: %s"
-msgstr "Geçersiz alan adı formatı: %s"
+msgstr "无效的域名格式：%s"
 
 msgid "Select which rel attributes to add to external links. These attributes help with security and SEO."
-msgstr "Dış bağlantılara eklenecek rel özelliklerini seçin. Bu özellikler güvenlik ve SEO konusunda yardımcı olur."
+msgstr "选择要添加到外部链接的rel属性。这些属性有助于安全性和SEO。"
 
 msgid "Add custom domains to exclude from link modifications. One domain per line."
-msgstr "Bağlantı düzenlemelerinden hariç tutulacak özel alan adlarını ekleyin. Her satıra bir alan adı."
+msgstr "添加要从链接修改中排除的自定义域名。每行一个域名。"
 
 msgid "example.com"
 msgstr "example.com"
 
 msgid "Enter one domain per line. Example: example.com"
-msgstr "Her satıra bir alan adı girin. Örnek: example.com"
+msgstr "每行输入一个域名。示例：example.com"
 
 msgid "Save Changes"
-msgstr "Değişiklikleri Kaydet"
+msgstr "保存更改"
 
 msgid "Auto External Link Modifier requires PHP 7.4 or higher."
-msgstr "Auto External Link Modifier PHP 7.4 veya üstünü gerektirir."
+msgstr "Auto External Link Modifier需要PHP 7.4或更高版本。"
 
 msgid "Auto External Link Modifier requires WordPress 5.0 or higher."
-msgstr "Auto External Link Modifier WordPress 5.0 veya üstünü gerektirir."
+msgstr "Auto External Link Modifier需要WordPress 5.0或更高版本。"
 
 msgid "Smart Link"
-msgstr "Akıllı Bağlantı"
+msgstr "智能链接"
 
 msgid "Link URL"
-msgstr "Bağlantı URL'si"
+msgstr "链接URL"
 
 msgid "Open in New Tab"
-msgstr "Yeni Sekmede Aç"
+msgstr "在新标签页中打开"
 
 msgid "Exclude from Processing"
-msgstr "İşlemden Hariç Tut"
+msgstr "从处理中排除"
 
 msgid "Exclude this link from automatic modifications"
-msgstr "Bu bağlantıyı otomatik değişikliklerden hariç tut"
+msgstr "从自动修改中排除此链接"
 
 msgid "Link Elements"
-msgstr "Bağlantı Elemanları"
+msgstr "链接元素"
 
 msgid "Link Content"
-msgstr "Bağlantı İçeriği"
+msgstr "链接内容"
 
 msgid "External Link Blocks"
-msgstr "Dış Bağlantı Blokları"
+msgstr "外部链接区块"
 
 msgid "Missing required plugins: %s"
-msgstr "Gerekli eklentiler eksik: %s"
+msgstr "缺少所需插件：%s"
 
 msgid "Settings"
-msgstr "Ayarlar"
+msgstr "设置"

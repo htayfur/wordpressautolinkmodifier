@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: Auto External Link Modifier 2.0.1\n"
 "Report-Msgid-Bugs-To: iletisim@htayfur.com\n"
 "POT-Creation-Date: 2024-02-17 12:23+0300\n"
-"PO-Revision-Date: 2024-02-17 12:24+0300\n"
+"PO-Revision-Date: 2024-02-17 12:37+0300\n"
 "Last-Translator: Hakan Tayfur <iletisim@htayfur.com>\n"
-"Language-Team: Turkish <iletisim@htayfur.com>\n"
-"Language: tr_TR\n"
+"Language-Team: Italian <iletisim@htayfur.com>\n"
+"Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,76 +14,76 @@ msgstr ""
 "X-Generator: Poedit 3.4.2\n"
 
 msgid "External Link Settings"
-msgstr "Dış Bağlantı Ayarları"
+msgstr "Impostazioni Collegamenti Esterni"
 
 msgid "External Links"
-msgstr "Dış Bağlantılar"
+msgstr "Collegamenti Esterni"
 
 msgid "Link Settings"
-msgstr "Bağlantı Ayarları"
+msgstr "Impostazioni Collegamenti"
 
 msgid "REL Attributes"
-msgstr "REL Özellikleri"
+msgstr "Attributi REL"
 
 msgid "Excluded Domains"
-msgstr "Hariç Tutulan Alan Adları"
+msgstr "Domini Esclusi"
 
 msgid "Custom Domains"
-msgstr "Özel Alan Adları"
+msgstr "Domini Personalizzati"
 
 msgid "Security check failed. Please try again."
-msgstr "Güvenlik kontrolü başarısız. Lütfen tekrar deneyin."
+msgstr "Controllo di sicurezza fallito. Per favore riprova."
 
 msgid "Invalid domain format: %s"
-msgstr "Geçersiz alan adı formatı: %s"
+msgstr "Formato dominio non valido: %s"
 
 msgid "Select which rel attributes to add to external links. These attributes help with security and SEO."
-msgstr "Dış bağlantılara eklenecek rel özelliklerini seçin. Bu özellikler güvenlik ve SEO konusunda yardımcı olur."
+msgstr "Seleziona quali attributi rel aggiungere ai collegamenti esterni. Questi attributi aiutano con la sicurezza e il SEO."
 
 msgid "Add custom domains to exclude from link modifications. One domain per line."
-msgstr "Bağlantı düzenlemelerinden hariç tutulacak özel alan adlarını ekleyin. Her satıra bir alan adı."
+msgstr "Aggiungi domini personalizzati da escludere dalle modifiche dei collegamenti. Un dominio per riga."
 
 msgid "example.com"
-msgstr "example.com"
+msgstr "esempio.it"
 
 msgid "Enter one domain per line. Example: example.com"
-msgstr "Her satıra bir alan adı girin. Örnek: example.com"
+msgstr "Inserisci un dominio per riga. Esempio: esempio.it"
 
 msgid "Save Changes"
-msgstr "Değişiklikleri Kaydet"
+msgstr "Salva Modifiche"
 
 msgid "Auto External Link Modifier requires PHP 7.4 or higher."
-msgstr "Auto External Link Modifier PHP 7.4 veya üstünü gerektirir."
+msgstr "Auto External Link Modifier richiede PHP 7.4 o superiore."
 
 msgid "Auto External Link Modifier requires WordPress 5.0 or higher."
-msgstr "Auto External Link Modifier WordPress 5.0 veya üstünü gerektirir."
+msgstr "Auto External Link Modifier richiede WordPress 5.0 o superiore."
 
 msgid "Smart Link"
-msgstr "Akıllı Bağlantı"
+msgstr "Collegamento Intelligente"
 
 msgid "Link URL"
-msgstr "Bağlantı URL'si"
+msgstr "URL del Collegamento"
 
 msgid "Open in New Tab"
-msgstr "Yeni Sekmede Aç"
+msgstr "Apri in Nuova Scheda"
 
 msgid "Exclude from Processing"
-msgstr "İşlemden Hariç Tut"
+msgstr "Escludi dal Processamento"
 
 msgid "Exclude this link from automatic modifications"
-msgstr "Bu bağlantıyı otomatik değişikliklerden hariç tut"
+msgstr "Escludi questo collegamento dalle modifiche automatiche"
 
 msgid "Link Elements"
-msgstr "Bağlantı Elemanları"
+msgstr "Elementi del Collegamento"
 
 msgid "Link Content"
-msgstr "Bağlantı İçeriği"
+msgstr "Contenuto del Collegamento"
 
 msgid "External Link Blocks"
-msgstr "Dış Bağlantı Blokları"
+msgstr "Blocchi Collegamenti Esterni"
 
 msgid "Missing required plugins: %s"
-msgstr "Gerekli eklentiler eksik: %s"
+msgstr "Plugin richiesti mancanti: %s"
 
 msgid "Settings"
-msgstr "Ayarlar"
+msgstr "Impostazioni"

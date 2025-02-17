@@ -1,0 +1,89 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Auto External Link Modifier 2.0.1\n"
+"Report-Msgid-Bugs-To: iletisim@htayfur.com\n"
+"POT-Creation-Date: 2024-02-17 12:23+0300\n"
+"PO-Revision-Date: 2024-02-17 12:39+0300\n"
+"Last-Translator: Hakan Tayfur <iletisim@htayfur.com>\n"
+"Language-Team: Hindi <iletisim@htayfur.com>\n"
+"Language: hi_IN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+msgid "External Link Settings"
+msgstr "बाहरी लिंक सेटिंग्स"
+
+msgid "External Links"
+msgstr "बाहरी लिंक"
+
+msgid "Link Settings"
+msgstr "लिंक सेटिंग्स"
+
+msgid "REL Attributes"
+msgstr "REL विशेषताएं"
+
+msgid "Excluded Domains"
+msgstr "बहिष्कृत डोमेन"
+
+msgid "Custom Domains"
+msgstr "कस्टम डोमेन"
+
+msgid "Security check failed. Please try again."
+msgstr "सुरक्षा जांच विफल। कृपया पुनः प्रयास करें।"
+
+msgid "Invalid domain format: %s"
+msgstr "अमान्य डोमेन प्रारूप: %s"
+
+msgid "Select which rel attributes to add to external links. These attributes help with security and SEO."
+msgstr "चुनें कि बाहरी लिंक में कौन से rel विशेषताएं जोड़ें। ये विशेषताएं सुरक्षा और SEO में मदद करती हैं।"
+
+msgid "Add custom domains to exclude from link modifications. One domain per line."
+msgstr "लिंक संशोधनों से बाहर रखने के लिए कस्टम डोमेन जोड़ें। प्रति लाइन एक डोमेन।"
+
+msgid "example.com"
+msgstr "udaharan.com"
+
+msgid "Enter one domain per line. Example: example.com"
+msgstr "प्रति लाइन एक डोमेन दर्ज करें। उदाहरण: udaharan.com"
+
+msgid "Save Changes"
+msgstr "परिवर्तन सहेजें"
+
+msgid "Auto External Link Modifier requires PHP 7.4 or higher."
+msgstr "ऑटो एक्सटर्नल लिंक मॉडिफायर को PHP 7.4 या उच्चतर की आवश्यकता है।"
+
+msgid "Auto External Link Modifier requires WordPress 5.0 or higher."
+msgstr "ऑटो एक्सटर्नल लिंक मॉडिफायर को WordPress 5.0 या उच्चतर की आवश्यकता है।"
+
+msgid "Smart Link"
+msgstr "स्मार्ट लिंक"
+
+msgid "Link URL"
+msgstr "लिंक URL"
+
+msgid "Open in New Tab"
+msgstr "नए टैब में खोलें"
+
+msgid "Exclude from Processing"
+msgstr "प्रोसेसिंग से बाहर रखें"
+
+msgid "Exclude this link from automatic modifications"
+msgstr "इस लिंक को स्वचालित संशोधनों से बाहर रखें"
+
+msgid "Link Elements"
+msgstr "लिंक एलिमेंट्स"
+
+msgid "Link Content"
+msgstr "लिंक सामग्री"
+
+msgid "External Link Blocks"
+msgstr "बाहरी लिंक ब्लॉक्स"
+
+msgid "Missing required plugins: %s"
+msgstr "आवश्यक प्लगइन्स नहीं मिले: %s"
+
+msgid "Settings"
+msgstr "सेटिंग्स"

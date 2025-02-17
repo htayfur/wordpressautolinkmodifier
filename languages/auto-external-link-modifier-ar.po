@@ -1,0 +1,90 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Auto External Link Modifier 2.0.1\n"
+"Report-Msgid-Bugs-To: iletisim@htayfur.com\n"
+"POT-Creation-Date: 2024-02-17 12:23+0300\n"
+"PO-Revision-Date: 2024-02-17 12:34+0300\n"
+"Last-Translator: Hakan Tayfur <iletisim@htayfur.com>\n"
+"Language-Team: Arabic <iletisim@htayfur.com>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-RTL: true\n"
+
+msgid "External Link Settings"
+msgstr "إعدادات الروابط الخارجية"
+
+msgid "External Links"
+msgstr "روابط خارجية"
+
+msgid "Link Settings"
+msgstr "إعدادات الرابط"
+
+msgid "REL Attributes"
+msgstr "سمات REL"
+
+msgid "Excluded Domains"
+msgstr "النطاقات المستثناة"
+
+msgid "Custom Domains"
+msgstr "نطاقات مخصصة"
+
+msgid "Security check failed. Please try again."
+msgstr "فشل التحقق من الأمان. حاول مرة اخرى."
+
+msgid "Invalid domain format: %s"
+msgstr "تنسيق نطاق غير صالح: %s"
+
+msgid "Select which rel attributes to add to external links. These attributes help with security and SEO."
+msgstr "حدد سمات rel المراد إضافتها إلى الروابط الخارجية. تساعد هذه السمات في الأمان وتحسين محركات البحث."
+
+msgid "Add custom domains to exclude from link modifications. One domain per line."
+msgstr "أضف نطاقات مخصصة للاستبعاد من تعديلات الروابط. نطاق واحد لكل سطر."
+
+msgid "example.com"
+msgstr "example.com"
+
+msgid "Enter one domain per line. Example: example.com"
+msgstr "أدخل نطاقًا واحدًا لكل سطر. مثال: example.com"
+
+msgid "Save Changes"
+msgstr "حفظ التغييرات"
+
+msgid "Auto External Link Modifier requires PHP 7.4 or higher."
+msgstr "يتطلب Auto External Link Modifier PHP 7.4 أو أعلى."
+
+msgid "Auto External Link Modifier requires WordPress 5.0 or higher."
+msgstr "يتطلب Auto External Link Modifier WordPress 5.0 أو أعلى."
+
+msgid "Smart Link"
+msgstr "رابط ذكي"
+
+msgid "Link URL"
+msgstr "رابط URL"
+
+msgid "Open in New Tab"
+msgstr "فتح في علامة تبويب جديدة"
+
+msgid "Exclude from Processing"
+msgstr "استثناء من المعالجة"
+
+msgid "Exclude this link from automatic modifications"
+msgstr "استثناء هذا الرابط من التعديلات التلقائية"
+
+msgid "Link Elements"
+msgstr "عناصر الرابط"
+
+msgid "Link Content"
+msgstr "محتوى الرابط"
+
+msgid "External Link Blocks"
+msgstr "كتل الروابط الخارجية"
+
+msgid "Missing required plugins: %s"
+msgstr "المكونات الإضافية المطلوبة مفقودة: %s"
+
+msgid "Settings"
+msgstr "الإعدادات"
