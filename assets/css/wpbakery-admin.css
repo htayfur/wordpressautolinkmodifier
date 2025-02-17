@@ -1,0 +1,124 @@
+/* WPBakery Smart Link Admin Styles */
+
+.wpb_aelm_smart_link {
+    background: #f8f9fa;
+    padding: 15px;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+}
+
+.wpb_aelm_smart_link .wpb_element_wrapper {
+    position: relative;
+    padding-left: 45px;
+}
+
+.wpb_aelm_smart_link .wpb_element_wrapper:before {
+    content: "\f0c1";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #6c757d;
+}
+
+.wpb_aelm_smart_link.excluded .wpb_element_wrapper:before {
+    content: "\f023";
+    color: #dc3545;
+}
+
+.wpb_aelm_smart_link .wpb_element_title {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Link Preview */
+.wpb_aelm_smart_link .aelm-link-preview {
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+.wpb_aelm_smart_link .aelm-link-preview.external:after {
+    content: "\f08e";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-left: 5px;
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+/* Form Elements */
+.wpb_aelm_smart_link .vc_link_field {
+    margin-bottom: 10px;
+}
+
+.wpb_aelm_smart_link .vc_checkbox {
+    margin-top: 10px;
+}
+
+.wpb_aelm_smart_link .vc_checkbox label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Custom Design Options */
+.wpb_aelm_smart_link .vc_color-picker {
+    max-width: 100px;
+}
+
+/* Loading State */
+.wpb_aelm_smart_link.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.wpb_aelm_smart_link.loading:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-top-color: #000;
+    border-radius: 50%;
+    animation: aelm-spin 1s linear infinite;
+}
+
+@keyframes aelm-spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 782px) {
+    .wpb_aelm_smart_link .wpb_element_wrapper {
+        padding-left: 0;
+    }
+
+    .wpb_aelm_smart_link .wpb_element_wrapper:before {
+        display: none;
+    }
+}
+
+/* Error States */
+.wpb_aelm_smart_link .aelm-error {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Success States */
+.wpb_aelm_smart_link .aelm-success {
+    color: #28a745;
+    font-size: 12px;
+    margin-top: 5px;
+}
