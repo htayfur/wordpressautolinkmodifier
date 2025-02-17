@@ -1,0 +1,120 @@
+/* Smart Link Block Editor Styles */
+
+.wp-block-aelm-smart-link {
+    position: relative;
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px dashed #ddd;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.wp-block-aelm-smart-link:hover {
+    border-color: #007cba;
+}
+
+.wp-block-aelm-smart-link .aelm-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #007cba;
+    transition: all 0.3s ease;
+}
+
+/* External Link Icon */
+.wp-block-aelm-smart-link .aelm-link[target="_blank"]::after {
+    content: "\f08e";
+    font-family: "dashicons";
+    margin-left: 5px;
+    font-size: 0.8em;
+    opacity: 0.7;
+    vertical-align: middle;
+}
+
+/* Excluded Link Style */
+.wp-block-aelm-smart-link .aelm-link.aelm-excluded {
+    color: #dc3545;
+}
+
+.wp-block-aelm-smart-link .aelm-link.aelm-excluded::before {
+    content: "\f160";
+    font-family: "dashicons";
+    margin-right: 5px;
+    font-size: 0.8em;
+    opacity: 0.7;
+    vertical-align: middle;
+}
+
+/* Loading State */
+.wp-block-aelm-smart-link.is-loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.wp-block-aelm-smart-link.is-loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-top-color: #007cba;
+    border-radius: 50%;
+    animation: aelm-spin 1s linear infinite;
+}
+
+/* Selected State */
+.wp-block-aelm-smart-link.is-selected {
+    border-style: solid;
+    border-color: #007cba;
+}
+
+/* Alignment Styles */
+.wp-block-aelm-smart-link.has-text-align-center {
+    text-align: center;
+}
+
+.wp-block-aelm-smart-link.has-text-align-right {
+    text-align: right;
+}
+
+/* Inspector Controls */
+.components-panel__body .components-base-control {
+    margin-bottom: 24px;
+}
+
+.components-panel__body .components-toggle-control {
+    margin-bottom: 16px;
+}
+
+/* Animations */
+@keyframes aelm-spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 782px) {
+    .wp-block-aelm-smart-link {
+        padding: 0.8em;
+    }
+}
+
+/* Dark Mode Support */
+.is-dark-theme .wp-block-aelm-smart-link {
+    border-color: #30373d;
+}
+
+.is-dark-theme .wp-block-aelm-smart-link:hover {
+    border-color: #00a0d2;
+}
+
+.is-dark-theme .wp-block-aelm-smart-link .aelm-link {
+    color: #00a0d2;
+}
+
+.is-dark-theme .wp-block-aelm-smart-link.is-selected {
+    border-color: #00a0d2;
+}

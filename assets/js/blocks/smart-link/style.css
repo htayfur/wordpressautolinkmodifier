@@ -1,0 +1,95 @@
+/* Smart Link Block Frontend Styles */
+
+.wp-block-aelm-smart-link {
+    margin: 1em 0;
+}
+
+.wp-block-aelm-smart-link .aelm-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #007cba;
+    transition: all 0.3s ease;
+}
+
+.wp-block-aelm-smart-link .aelm-link:hover {
+    opacity: 0.8;
+}
+
+/* External Link Icon */
+.wp-block-aelm-smart-link .aelm-link[target="_blank"]::after {
+    content: "\f08e";
+    font-family: dashicons;
+    margin-left: 5px;
+    font-size: 0.8em;
+    opacity: 0.7;
+    vertical-align: middle;
+}
+
+/* Excluded Link Style */
+.wp-block-aelm-smart-link .aelm-link.aelm-excluded {
+    color: inherit;
+}
+
+.wp-block-aelm-smart-link .aelm-link.aelm-excluded::after {
+    display: none;
+}
+
+/* Alignment Styles */
+.wp-block-aelm-smart-link.has-text-align-center {
+    text-align: center;
+}
+
+.wp-block-aelm-smart-link.has-text-align-right {
+    text-align: right;
+}
+
+/* Link States */
+.wp-block-aelm-smart-link .aelm-link:focus {
+    outline: thin dotted;
+    outline-offset: 2px;
+}
+
+.wp-block-aelm-smart-link .aelm-link:active {
+    opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 782px) {
+    .wp-block-aelm-smart-link {
+        margin: 0.8em 0;
+    }
+    
+    .wp-block-aelm-smart-link .aelm-link {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Accessibility */
+@media screen and (prefers-reduced-motion: reduce) {
+    .wp-block-aelm-smart-link .aelm-link {
+        transition: none;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .wp-block-aelm-smart-link .aelm-link[target="_blank"]::after {
+        content: " (" attr(href) ")";
+        font-family: inherit;
+        font-size: 0.8em;
+        opacity: 1;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .wp-block-aelm-smart-link .aelm-link {
+        color: #00a0d2;
+    }
+    
+    .wp-block-aelm-smart-link .aelm-link:hover {
+        color: #33b3db;
+    }
+}
