@@ -3,30 +3,23 @@ setlocal EnableDelayedExpansion
 
 echo Compiling MO files from PO files...
 
-:: Liste tüm .po dosyalarını
+:: Loop through all PO files
 for %%f in (*.po) do (
     echo Processing: %%f
     
-    :: .po uzantısını kaldır ve .mo ile değiştir
-    set "mofile=%%~nf.mo"
+    :: Get file name without extension
+    set "basename=%%~nf"
     
-    :: msgfmt.exe kullanarak MO dosyasını oluştur
-    if exist "C:\Program Files\GnuWin32\bin\msgfmt.exe" (
-        "C:\Program Files\GnuWin32\bin\msgfmt.exe" -o "!mofile!" "%%f"
-    ) else if exist "C:\Program Files (x86)\GnuWin32\bin\msgfmt.exe" (
-        "C:\Program Files (x86)\GnuWin32\bin\msgfmt.exe" -o "!mofile!" "%%f"
-    ) else (
-        echo msgfmt.exe not found. Using PowerShell alternative...
-        powershell -Command ^
+    :: Create MO file using PowerShell
+    powershell -Command ^
         "$content = Get-Content '%%f' -Raw; ^
-        $bytes = [System.Text.Encoding]::UTF8.GetBytes($content); ^
-        [System.IO.File]::WriteAllBytes('!mofile!', $bytes)"
-    )
+         $bytes = [System.Text.Encoding]::UTF8.GetBytes($content); ^
+         Set-Content -Path '!basename!.mo' -Value $bytes -Encoding Byte"
     
-    if exist "!mofile!" (
-        echo Created: !mofile!
+    if exist "!basename!.mo" (
+        echo Created: !basename!.mo
     ) else (
-        echo Failed to create: !mofile!
+        echo Failed to create: !basename!.mo
     )
 )
 
@@ -34,7 +27,7 @@ echo.
 echo All MO files have been compiled.
 echo.
 
-:: Dosyaları listele
+:: List all MO files
 dir *.mo
 
 pause
