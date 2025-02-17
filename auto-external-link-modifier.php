@@ -14,9 +14,20 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+// Basic WordPress function checks
+if (!function_exists('add_action') || !function_exists('add_filter')) {
+    error_log('Auto External Link Modifier: WordPress core functions are missing.');
+    return;
+}
+
 define('AELM_VERSION', '2.0.0');
 define('AELM_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('AELM_PLUGIN_URL', plugin_dir_url(__FILE__));
+
+// First, load polyfill to ensure all functions are available
+require_once AELM_PLUGIN_DIR . 'includes/class-polyfill.php';
+AELM_Polyfill::register();
+AELM_Polyfill::register_asset_functions();
 
 // Plugin autoloader
 spl_autoload_register(function ($class) {
@@ -59,14 +70,14 @@ final class Auto_External_Link_Modifier {
         return self::$instance;
     }
 
-    public function __construct() {
+    private function __construct() {
         $this->loader = new AELM_Plugin_Loader();
         $this->compatibility = new AELM_Compatibility_Checker();
         
         if ($this->compatibility->check_all()) {
-            $this->loader->add_action('plugins_loaded', $this, 'init');
-            $this->loader->add_action('admin_init', $this, 'check_environment');
-            $this->loader->add_filter('plugin_action_links_' . plugin_basename(__FILE__), $this, 'add_action_links');
+            $this->loader->add_action('plugins_loaded', $this, 'init', 10, 1);
+            $this->loader->add_action('admin_init', $this, 'check_environment', 10, 1);
+            $this->loader->add_filter('plugin_action_links_' . plugin_basename(__FILE__), $this, 'add_action_links', 10, 1);
             $this->loader->run();
         } else {
             $this->compatibility->display_notices();
@@ -74,7 +85,11 @@ final class Auto_External_Link_Modifier {
     }
 
     public function init() {
-        load_plugin_textdomain('auto-external-link-modifier', false, dirname(plugin_basename(__FILE__)) . '/languages');
+        load_plugin_textdomain(
+            'auto-external-link-modifier',
+            false,
+            dirname(plugin_basename(__FILE__)) . '/languages'
+        );
         
         // Initialize core components
         $this->settings = new AELM_Settings();
@@ -109,7 +124,7 @@ final class Auto_External_Link_Modifier {
                 echo '<div class="notice notice-error"><p>';
                 echo esc_html__('Auto External Link Modifier requires PHP 7.4 or higher.', 'auto-external-link-modifier');
                 echo '</p></div>';
-            });
+            }, 10, 1);
         }
 
         if (version_compare($GLOBALS['wp_version'], '5.0', '<')) {
@@ -117,7 +132,7 @@ final class Auto_External_Link_Modifier {
                 echo '<div class="notice notice-error"><p>';
                 echo esc_html__('Auto External Link Modifier requires WordPress 5.0 or higher.', 'auto-external-link-modifier');
                 echo '</p></div>';
-            });
+            }, 10, 1);
         }
 
         // Check for page builders
@@ -127,15 +142,24 @@ final class Auto_External_Link_Modifier {
                 echo '<div class="notice notice-warning is-dismissible"><p>';
                 echo esc_html(implode(' ', $missing_builders));
                 echo '</p></div>';
-            });
+            }, 10, 1);
         }
     }
 
     public function add_action_links($links) {
         $plugin_links = [
-            '<a href="' . admin_url('options-general.php?page=aelm-settings') . '">' . __('Settings', 'auto-external-link-modifier') . '</a>',
+            '<a href="' . admin_url('options-general.php?page=aelm-settings') . '">' . 
+            esc_html__('Settings', 'auto-external-link-modifier') . '</a>',
         ];
         return array_merge($plugin_links, $links);
+    }
+
+    // Prevent cloning
+    private function __clone() {}
+
+    // Prevent unserialize
+    public function __wakeup() {
+        throw new \Exception("Cannot unserialize singleton");
     }
 }
 
@@ -143,4 +167,4 @@ function AELM() {
     return Auto_External_Link_Modifier::instance();
 }
 
-AELM();
+add_action('plugins_loaded', 'AELM', 5);
