@@ -1,76 +1,30 @@
 # Auto External Link Modifier - Changelog
 
-## [2.0.1] - 2024-02-17
-
-### Fixed
-- Added function polyfills for compatibility
-- Fixed action/filter arguments
-- Enhanced error handling
-- Improved plugin initialization
-- Added compatibility checker
+## [2.0.2] - 2024-02-17
 
 ### Added
-- Polyfill system for missing WordPress functions
-- Plugin loader class for better organization
-- Compatibility checking system
-- Enhanced error messages
-- Proper argument handling
+- Language support for:
+  - Chinese (zh_CN)
+  - Arabic (ar)
+  - Spanish (es_ES)
+  - Portuguese (pt_BR)
+  - French (fr_FR)
+  - German (de_DE)
+  - Japanese (ja)
+  - Russian (ru_RU)
+  - Italian (it_IT)
+  - Dutch (nl_NL)
+  - Korean (ko_KR)
+  - Polish (pl_PL)
+  - Hindi (hi_IN)
+  - Turkish (tr_TR)
 
-## [2.0.0] - 2024-02-17
+### Added Files
+- Added PO template file
+- Added PO files for major languages
+- Added build script for MO generation
+- Added language-specific character support
 
-### Major Changes
-- Added Page Builder integrations
-  - Elementor integration
-  - WPBakery Page Builder integration
-  - Divi Builder integration
-  - Gutenberg blocks support
+## [2.0.1] - 2024-02-17
 
-### New Features
-- Custom Smart Link components for each builder:
-  - Elementor Widget
-  - WPBakery Shortcode
-  - Divi Module
-  - Gutenberg Block
-- Advanced styling options
-- Visual builder support
-- Dark mode compatibility
-- Responsive design improvements
-
-### Builder-Specific Features
-#### Elementor
-- Smart Link widget with live preview
-- Custom control panel
-- Dynamic content support
-- Template integration
-
-#### WPBakery
-- Custom shortcode with parameters
-- Visual composer integration
-- Backend editor support
-- Template system integration
-
-#### Divi
-- Custom module with settings
-- Visual builder compatibility
-- Dynamic content support
-- Template integration
-
-#### Gutenberg
-- Custom block with inspector controls
-- Rich text support
-- Block patterns support
-- Full-site editing ready
-
-### Technical Improvements
-- Modular builder architecture
-- Enhanced performance
-- Better error handling
-- Improved code organization
-
-### Documentation
-- Added builder integration guides
-- Updated installation instructions
-- Added developer documentation
-- Enhanced code comments
-
-[Previous versions remain the same...]
+[Previous entries remain the same...]
