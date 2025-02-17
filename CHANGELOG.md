@@ -1,56 +1,60 @@
 # Auto External Link Modifier - Changelog
 
-## Upcoming Features
+## [2.0.0] - 2024-02-17
 
-### Page Builder Integration (Next Release)
-- Elementor Support
-  - Custom link widgets
-  - Dynamic link handling
-  - Template integration
-- WPBakery Support
-  - Custom elements
-  - Link processing
-  - Template support
-- Divi Builder Support
-  - Module integration
-  - Dynamic content support
-  - Template processing
-- Gutenberg Blocks
-  - Custom link blocks
-  - Dynamic blocks
-  - Block patterns
+### Major Changes
+- Added Page Builder integrations
+  - Elementor integration
+  - WPBakery Page Builder integration
+  - Divi Builder integration
+  - Gutenberg blocks support
 
-## Cancelled Features
+### New Features
+- Custom Smart Link components for each builder:
+  - Elementor Widget
+  - WPBakery Shortcode
+  - Divi Module
+  - Gutenberg Block
+- Advanced styling options
+- Visual builder support
+- Dark mode compatibility
+- Responsive design improvements
 
-### Link Analytics
-Feature cancelled due to:
-- High database storage requirements
-- Potential performance impact
-- Better alternatives exist (e.g., Google Analytics)
-- Outside core plugin scope
+### Builder-Specific Features
+#### Elementor
+- Smart Link widget with live preview
+- Custom control panel
+- Dynamic content support
+- Template integration
 
-Alternative: Use dedicated analytics tools for link tracking.
+#### WPBakery
+- Custom shortcode with parameters
+- Visual composer integration
+- Backend editor support
+- Template system integration
 
-## [1.2.1] - 2024-02-16
+#### Divi
+- Custom module with settings
+- Visual builder compatibility
+- Dynamic content support
+- Template integration
 
-### Advanced Domain Management
-- Added wildcard domain support
-  - Support for *.example.com patterns
-  - Subdomain matching
-  - Domain group handling
-- Added regex pattern support
-  - Custom domain patterns
-  - Complex domain rules
-  - Pattern validation
-- Added bulk domain operations
-  - Domain import feature
-  - Domain export feature
-  - Bulk validation
+#### Gutenberg
+- Custom block with inspector controls
+- Rich text support
+- Block patterns support
+- Full-site editing ready
 
-### Code Improvements
-- Enhanced domain validation
-- Improved pattern matching
+### Technical Improvements
+- Modular builder architecture
+- Enhanced performance
 - Better error handling
-- Optimized domain checks
+- Improved code organization
+
+### Documentation
+- Added builder integration guides
+- Updated installation instructions
+- Added developer documentation
+- Enhanced code comments
 
 [Previous versions remain the same...]

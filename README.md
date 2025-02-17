@@ -2,78 +2,146 @@
 
 A WordPress plugin that adds custom 'rel' attributes and 'target="_blank"' to external links in posts and pages. It modifies all links except internal links and official institution websites.
 
-## ✅ Current Features
+## 🌟 Key Features
 
-[Previous features section remains the same...]
+### Page Builder Integration
+- ✅ **Elementor Support**
+  - Custom Smart Link widget
+  - Visual editing interface
+  - Dynamic content support
+  - Template integration
 
-## 📋 Planned Features
+- ✅ **WPBakery Support**
+  - Custom shortcode element
+  - Visual composer integration
+  - Backend editor support
+  - Template system
 
-1. Page Builder Integration (Next Release):
-   - [ ] Elementor Support
-     - Custom link widgets
-     - Dynamic link handling
-     - Template integration
-   - [ ] WPBakery Support
-     - Custom elements
-     - Link processing
-     - Template support
-   - [ ] Divi Builder Support
-     - Module integration
-     - Dynamic content support
-     - Template processing
-   - [ ] Gutenberg Blocks
-     - Custom link blocks
-     - Dynamic blocks
-     - Block patterns
+- ✅ **Divi Builder Support**
+  - Custom link module
+  - Visual builder compatibility
+  - Dynamic content handling
+  - Template support
 
-2. Advanced Management:
-   - [ ] Link preview
-   - [ ] Batch processing
-   - [ ] Scheduled processing
-   - [ ] API endpoints
+- ✅ **Gutenberg Support**
+  - Custom link block
+  - Rich text integration
+  - Block patterns
+  - Full-site editing ready
 
-## ❌ Cancelled Features
+### Core Features
+1. Link Processing:
+   - ✅ Process WordPress content
+   - ✅ Process widget content
+   - ✅ Process builder content
+   - ✅ Smart link detection
+   - ✅ Automatic exclusions
 
-1. Link Analytics:
-   Reason: After evaluation, this feature was cancelled due to:
-   - High database storage requirements
-   - Potential performance impact
-   - Better alternatives exist (e.g., Google Analytics)
-   - Outside core plugin scope
-   
-   Alternative: We recommend using dedicated analytics tools that are better suited for link tracking and analysis.
+2. Security Features:
+   - ✅ Nonce verification
+   - ✅ Input sanitization
+   - ✅ XSS protection
+   - ✅ Secure validation
+   - ✅ Error monitoring
 
-[Rest of the README remains the same...]
+3. Performance Features:
+   - ✅ Content caching
+   - ✅ Optimized processing
+   - ✅ Smart invalidation
+   - ✅ Error recovery
+   - ✅ Resource efficiency
 
-## Version History
+4. Admin Interface:
+   - ✅ Modern design
+   - ✅ Live preview
+   - ✅ Visual feedback
+   - ✅ Dark mode
+   - ✅ Responsive layout
 
-### 1.2.1
-- Added wildcard domain support
-- Added regex pattern matching
-- Added bulk domain operations
-- Enhanced domain validation
-- Improved pattern matching
+## 🔧 Requirements
 
-### 1.2.0
-- Added system requirements check
-- Added environment validation
-- Added quick settings access
-- Enhanced admin interface
-- Improved error handling
+- WordPress 5.0+
+- PHP 7.4+
+- One or more supported page builders:
+  - Elementor
+  - WPBakery Page Builder
+  - Divi Builder
 
-### 1.1.1
-- Added comprehensive security features
-- Implemented performance optimizations
-- Updated documentation and translations
+## 📦 Installation
 
-### 1.1.0 
-- Added widget content support
-- Added custom domain list feature
-- Added advanced settings page
-- Added admin panel CSS/JS
+1. Download the plugin
+2. Go to WordPress admin > Plugins > Add New
+3. Click "Upload Plugin"
+4. Upload the zip file
+5. Activate the plugin
+6. Configure settings
 
-### 1.0.0 
-- Initial release
-- External link processing
-- Customizable REL attributes
-- Official domain support
+## 🛠️ Configuration
+
+1. Go to Settings > External Links
+2. Configure general settings
+3. Set up builder preferences
+4. Customize link attributes
+5. Save changes
+
+## 🎨 Builder Usage
+
+### Elementor
+1. Edit with Elementor
+2. Find "Smart Link" widget
+3. Drag and drop
+4. Configure settings
+
+### WPBakery
+1. Add new element
+2. Select "Smart Link"
+3. Configure options
+4. Save changes
+
+### Divi
+1. Open Divi Builder
+2. Add Smart Link module
+3. Customize settings
+4. Save layout
+
+### Gutenberg
+1. Add Smart Link block
+2. Configure in sidebar
+3. Customize appearance
+4. Update page
+
+## 🌐 Supported Languages
+- English
+- Turkish (Türkçe)
+
+## 🔄 Version History
+
+### 2.0.0
+- Added Page Builder integrations
+- Added Smart Link components
+- Added visual builder support
+- Enhanced UI/UX
+- Improved performance
+
+[Previous versions remain the same...]
+
+## 🛡️ License
+
+GPL v2 or later
+
+## 👨‍💻 Developer
+
+[Hakan Tayfur](https://htayfur.com)
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create feature branch
+3. Commit changes
+4. Push to branch
+5. Create Pull Request
+
+## 📝 Documentation
+
+Full documentation available at:
+[Project Wiki](https://github.com/htayfur/wordpressautolinkmodifier/wiki)
