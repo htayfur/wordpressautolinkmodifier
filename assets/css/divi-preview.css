@@ -1,0 +1,117 @@
+/* Divi Smart Link Preview Styles */
+
+.et-db #et-boc .et-l .aelm_smart_link {
+    display: block;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Link Styles */
+.et-db #et-boc .et-l .aelm_smart_link a {
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* External Link Indicator */
+.et-db #et-boc .et-l .aelm_smart_link a[target="_blank"]:after {
+    content: "\f08e";
+    font-family: "ETmodules";
+    margin-left: 5px;
+    font-size: 0.8em;
+    opacity: 0.7;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Hover Effects */
+.et-db #et-boc .et-l .aelm_smart_link a:hover {
+    opacity: 0.8;
+}
+
+/* Alignment Classes */
+.et-db #et-boc .et-l .aelm_smart_link.et_pb_text_align_left {
+    text-align: left;
+}
+
+.et-db #et-boc .et-l .aelm_smart_link.et_pb_text_align_center {
+    text-align: center;
+}
+
+.et-db #et-boc .et-l .aelm_smart_link.et_pb_text_align_right {
+    text-align: right;
+}
+
+/* Visual Builder Preview */
+.et-fb .aelm_smart_link {
+    min-height: 20px;
+    padding: 10px;
+    border: 1px dashed #ddd;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.et-fb .aelm_smart_link:hover {
+    border-color: #2b87da;
+}
+
+/* Excluded Links */
+.et-db #et-boc .et-l .aelm_smart_link.aelm-excluded a:before {
+    content: "\f023";
+    font-family: "ETmodules";
+    margin-right: 5px;
+    font-size: 0.8em;
+    opacity: 0.7;
+    display: inline-block;
+    vertical-align: middle;
+    color: #dc3545;
+}
+
+/* Loading State */
+.et-db #et-boc .et-l .aelm_smart_link.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.et-db #et-boc .et-l .aelm_smart_link.loading:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-top-color: #2b87da;
+    border-radius: 50%;
+    animation: aelm-spin 1s linear infinite;
+}
+
+@keyframes aelm-spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .et-db #et-boc .et-l .aelm_smart_link {
+        margin-bottom: 15px;
+    }
+
+    .et-db #et-boc .et-l .aelm_smart_link a {
+        display: block;
+        text-align: center;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .et-fb .aelm_smart_link {
+        background: rgba(0, 0, 0, 0.1);
+        border-color: #444;
+    }
+
+    .et-fb .aelm_smart_link:hover {
+        border-color: #2b87da;
+    }
+}

@@ -1,0 +1,114 @@
+/* Divi Smart Link Admin Styles */
+
+.et-db #et-boc .et-l .aelm_smart_link {
+    position: relative;
+    padding: 15px;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.et-db #et-boc .et-l .aelm_smart_link:hover {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Module Header */
+.et-db #et-boc .et-l .aelm_smart_link .et_module_title {
+    position: relative;
+    padding-left: 25px;
+}
+
+.et-db #et-boc .et-l .aelm_smart_link .et_module_title:before {
+    content: "\f0c1";
+    font-family: "ETmodules";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #2b87da;
+}
+
+/* Link Preview */
+.et-db #et-boc .et-l .aelm_smart_link .aelm-preview {
+    margin-top: 10px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.et-db #et-boc .et-l .aelm_smart_link .aelm-preview:after {
+    content: "\f08e";
+    font-family: "ETmodules";
+    margin-left: 5px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* Settings Fields */
+.et-db #et-boc .et-l .aelm_smart_link .et-pb-option {
+    padding: 15px 0;
+}
+
+.et-db #et-boc .et-l .aelm_smart_link .et-pb-option-container {
+    position: relative;
+}
+
+/* Toggle States */
+.et-db #et-boc .et-l .aelm_smart_link.et_pb_module.aelm-excluded {
+    background: #fff3f4;
+    border-color: #ffccd1;
+}
+
+.et-db #et-boc .et-l .aelm_smart_link.et_pb_module.aelm-excluded .et_module_title:before {
+    content: "\f023";
+    color: #dc3545;
+}
+
+/* Loading State */
+.et-db #et-boc .et-l .aelm_smart_link.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.et-db #et-boc .et-l .aelm_smart_link.loading:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-top-color: #2b87da;
+    border-radius: 50%;
+    animation: aelm-spin 1s linear infinite;
+}
+
+@keyframes aelm-spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Visual Builder Styles */
+.et-fb-modules-list .aelm_smart_link:before {
+    content: "\f0c1";
+}
+
+.et-fb-modules-list .aelm_smart_link {
+    font-family: "ETmodules" !important;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 782px) {
+    .et-db #et-boc .et-l .aelm_smart_link {
+        padding: 10px;
+    }
+    
+    .et-db #et-boc .et-l .aelm_smart_link .et_module_title {
+        padding-left: 20px;
+    }
+}
