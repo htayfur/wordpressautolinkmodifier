@@ -1,5 +1,21 @@
 # Auto External Link Modifier - Changelog
 
+## [2.0.1] - 2024-02-17
+
+### Fixed
+- Added function polyfills for compatibility
+- Fixed action/filter arguments
+- Enhanced error handling
+- Improved plugin initialization
+- Added compatibility checker
+
+### Added
+- Polyfill system for missing WordPress functions
+- Plugin loader class for better organization
+- Compatibility checking system
+- Enhanced error messages
+- Proper argument handling
+
 ## [2.0.0] - 2024-02-17
 
 ### Major Changes
